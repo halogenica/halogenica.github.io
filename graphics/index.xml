@@ -93,7 +93,9 @@
       <guid>https://halogenica.github.io/graphics/hypertexturing/</guid>
       <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;
 
-&lt;video loop autoplay src=&#34;https://halogenica.github.io/img/graphics/hypertexturing/reflective_hypertexture.mp4&#34;&gt;&lt;/video&gt;
+&lt;video loop autoplay autobuffer muted playsinline&gt;
+    &lt;source src=&#34;https://halogenica.github.io/img/graphics/hypertexturing/reflective_hypertexture.mp4&#34;&gt;
+&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -20,7 +20,9 @@
       <guid>https://halogenica.github.io/tools/fez-viewer/</guid>
       <description>&lt;p&gt;Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better view of the game, I was looking for a way to visualize the levels.&lt;/p&gt;
 
-&lt;video loop autoplay src=&#34;https://halogenica.github.io/img/tools/fez-viewer/fox.mp4&#34;&gt;&lt;/video&gt;
+&lt;video loop autoplay autobuffer muted playsinline&gt;
+    &lt;source src=&#34;https://halogenica.github.io/img/tools/fez-viewer/fox.mp4&#34;&gt;
+&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
