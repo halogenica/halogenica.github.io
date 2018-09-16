@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Fez Viewer</title>
+  <meta property="og:title" content="Fez Viewer" />
+  <meta name="twitter:title" content="Fez Viewer" />
+  <meta name="description" content="Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better view of the game, I was looking for a way to visualize the levels.
+
+
+
+">
+  <meta property="og:description" content="Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better view of the game, I was looking for a way to visualize the levels.
+
+
+
+">
+  <meta name="twitter:description" content="Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better …">
+  <meta name="author" content="Michael Romero"/>
+  <link href='https://halogenica.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@halogenica" />
+  <meta name="twitter:creator" content="@halogenica" />
+  <meta property="og:url" content="https://halogenica.github.io/tools/fez-viewer/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Halogenica" />
+
+  <meta name="generator" content="Hugo 0.48" />
+  <link rel="canonical" href="https://halogenica.github.io/tools/fez-viewer/" />
+  <link rel="alternate" href="https://halogenica.github.io/index.xml" type="application/rss+xml" title="Halogenica">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://halogenica.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://halogenica.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://halogenica.github.io/css/codeblock.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://halogenica.github.io">Halogenica</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Games" href="/games/">Games</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Graphics" href="/graphics/">Graphics</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tools" href="/tools/">Tools</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Software" href="/software/">Software</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Hardware" href="/hardware/">Hardware</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="https://halogenica.github.io/img/tools/fez-viewer/FezViewer-2015-01-14-02-44-33-82.png" ></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Fez Viewer</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 14, 2015
+  
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Fez Viewer</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 14, 2015
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better view of the game, I was looking for a way to visualize the levels.</p>
+
+<video loop autoplay src="/img/tools/fez-viewer/fox.mp4"></video>
+
+<p></p>
+
+<p>After some research I found that there was a group of fans that had reversed the file formats for the game, and wrote some tools to dump the game data. &ldquo;fesh0r&rdquo;, a member of the Xentax forums, wrote a tool called fez_parse that is capable of dumping the game contents from the XBOX version, as well as viewing some of the 3D models from the game. You can view the forum post <a href="http://forum.xentax.com/viewtopic.php?f=21&amp;t=9624">here</a>. After the original forum posts, fesh0r updated fez_parse (renamed xnb_parse) to dump the PC version&rsquo;s content, and released posted it to <a href="https://github.com/fesh0r/xnb_parse">github</a>. This is some amazing progress, but unfortunately there was still no way to view full levels in 3D, so I decided to give it a shot. The programmer for Fez, Renaud Bédard, has several very insightful blog posts on Fez (and many other things), including how the content creation tool for Fez (called &ldquo;Fezzer&rdquo;) generates triles. His blog, <a href="http://theinstructionlimit.com/">The Instruction Limit</a>, contains a ton of great posts, but <a href="http://theinstructionlimit.com/behind-fez-trixels-part-two">this post</a> was a helpful one to read when writing the viewer.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/jPaCG1QYUz4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	  
+  
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/tools/fez-viewer/FezViewer-2015-01-14-02-50-02-83.png');">
+      <img itemprop="thumbnail" src="/img/tools/fez-viewer/FezViewer-2015-01-14-02-50-02-83.png" />
+    </div>
+    <a href="/img/tools/fez-viewer/FezViewer-2015-01-14-02-50-02-83.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/tools/fez-viewer/FezViewer-2015-01-14-02-48-16-99.png');">
+      <img itemprop="thumbnail" src="/img/tools/fez-viewer/FezViewer-2015-01-14-02-48-16-99.png" />
+    </div>
+    <a href="/img/tools/fez-viewer/FezViewer-2015-01-14-02-48-16-99.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/tools/fez-viewer/FezViewer-2015-01-14-02-49-12-36.png');">
+      <img itemprop="thumbnail" src="/img/tools/fez-viewer/FezViewer-2015-01-14-02-49-12-36.png" />
+    </div>
+    <a href="/img/tools/fez-viewer/FezViewer-2015-01-14-02-49-12-36.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/tools/fez-viewer/FezViewer-2015-01-14-02-44-33-82.png');">
+      <img itemprop="thumbnail" src="/img/tools/fez-viewer/FezViewer-2015-01-14-02-44-33-82.png" />
+    </div>
+    <a href="/img/tools/fez-viewer/FezViewer-2015-01-14-02-44-33-82.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/tools/fez-viewer/fez-viewer-v0-1-released.jpg');">
+      <img itemprop="thumbnail" src="/img/tools/fez-viewer/fez-viewer-v0-1-released.jpg" />
+    </div>
+    <a href="/img/tools/fez-viewer/fez-viewer-v0-1-released.jpg" itemprop="contentUrl"></a>
+  </figure>
+</div>
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/tools/fez-viewer/fox.gif');">
+      <img itemprop="thumbnail" src="/img/tools/fez-viewer/fox.gif" />
+    </div>
+    <a href="/img/tools/fez-viewer/fox.gif" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+</div>
+
+<h1 id="download">Download:</h1>
+
+<ul>
+<li><a href="/bin/tools/fez-viewer/FezViewer.zip">FezViewer v0.2 for Windows</a><br /></li>
+<li><a href="/bin/tools/fez-viewer/FezViewer_Mac.zip">FezViewer v0.2 for Mac OSX</a><br /></li>
+<li><a href="https://github.com/halogenica/FezViewer">Source Code</a></li>
+<li><a href="https://github.com/fesh0r/xnb_parse">xnb_parse</a></li>
+</ul>
+
+<h1 id="how-to-get-the-content">How to get the content:</h1>
+
+<h2 id="pc-version">PC Version</h2>
+
+<ol>
+<li>Buy Fez on PC (fez_parse requires a windows PC)</li>
+<li>Find Essential.pak and Other.pak in the &ldquo;Content&rdquo; directory</li>
+<li>Download <a href="https://github.com/fesh0r/xnb_parse">xnb_parse</a> (a.k.a. fez_parse)</li>
+<li>Copy the .pak files into the fez_parse &ldquo;Content&rdquo; directory</li>
+<li>Run full_export.bat</li>
+<li>You should end up with an &rdquo;export&rdquo; folder, everything else is unused</li>
+</ol>
+
+<h2 id="xbox-version">XBOX Version</h2>
+
+<ol>
+<li>Buy Fez on XBLA</li>
+<li>Transfer Fez files to PC (fez_parse requires a windows PC)</li>
+<li>Unpack files to get Essential.pak and Other.pak (le fluffy, etc.)</li>
+<li>Download <a href="https://github.com/fesh0r/xnb_parse">xnb_parse</a> (a.k.a. fez_parse)</li>
+<li>Copy the .pak files into the fez_parse &ldquo;Content&rdquo; directory</li>
+<li>Run full_export.bat</li>
+<li>You should end up with an &rdquo;export&rdquo; folder, everything else is unused</li>
+</ol>
+
+<h1 id="how-to-use-fezviewer">How to use FezViewer:</h1>
+
+<ol>
+<li>Run FezViewer.exe</li>
+<li>Press &lsquo;O&rsquo; to select a file, or drag and drop a file to open it</li>
+<li>Level files are .xml files in the &ldquo;levels&rdquo; directory</li>
+<li>Art Object files are .xml files in the &ldquo;art objects&rdquo; directory with the suffix &ldquo;ao&rdquo; (e.g. &ldquo;big_owlao.xml&rdquo;)</li>
+<li>Navigation works like Maya
+
+<ol>
+<li>Left click and drag to rotate</li>
+<li>Right click and drag to zoom</li>
+<li>Middle click (or alt + left click) and drag to translate</li>
+</ol></li>
+<li>Press &lsquo;F&rsquo; to fullscreen</li>
+<li>Press &lsquo;ESC&rsquo; to exit</li>
+</ol>
+
+<p>The levels are defined in .xml, and this initial version of the viewer loads the &ldquo;triles&rdquo; (polygonized 16x16x16 voxel sets) and &ldquo;art objects&rdquo; (detailed models). The level files also contain bounding volumes, the relevant scripts for that level, the background planes, soundtrack information, etc. There are a number of features I would like to add in future updates, including:</p>
+
+<ul>
+<li>Faster loading (RapidXML seems very slow)</li>
+<li>Better perspective camera controls (FPS style)</li>
+<li>Orthographic viewer, similar to the game</li>
+<li>Load background planes (particularly useful for interior rooms)</li>
+<li>Exporter to wavefront .obj files</li>
+</ul>
+
+<p>I noticed a few interesting things in the process of writing the viewer. One thing that stood out to me was that the levels contain triles not just for the outer hull of the level, but rather there are a ton of never-seen triles on the interior of the level. I&rsquo;m not sure precisely why these are defined, since they probably just waste space in the instanced draw and a bit of time to clip out. I also found it interesting that certain objects that I would normally consider some kind of special &ldquo;character&rdquo; objects are actually defined in the level; for example, the cube pieces are actually part of the level geometry. I found a number of triles with an index into the trile set of &ldquo;-1&rdquo;;, which I just skip over when loading the level. My best guess is that such triles were originally added using Fezzer, then removed and marked for delete using this &ldquo;-1&rdquo;; index instead of totally removing the geometry data. There were also some more minor curiosities, such as all art objects requiring a shift of (0.5, 0.5, 0.5) to line up correctly with the trile data, or the differences between &ldquo;TrilePosition&rdquo; and &ldquo;TrileEmplacement&rdquo; (I got the best results ignoring the emplacement).</p>
+
+<p>I hope other fans of the game find this tool interesting!</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://halogenica.github.io/tags/tools/">Tools</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/games/">Games</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/graphics/">Graphics</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/cinder/">Cinder</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/opengl/">OpenGL</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://halogenica.github.io/tools/cuda-design-rule-checking/" data-toggle="tooltip" data-placement="top" title="CUDA Design Rule Checking">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mike@halogenica.net" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/halogenica" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/halogenica" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/halogenica" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/halogenica" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/angelkatalyst" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/halogenica" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://halogenica.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Michael Romero
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2015
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://halogenica.github.io">Halogenica</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.48</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/main.js"></script>
+<script src="https://halogenica.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

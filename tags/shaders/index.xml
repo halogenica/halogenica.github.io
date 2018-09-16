@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shaders on Halogenica</title>
+    <link>https://halogenica.github.io/tags/shaders/</link>
+    <description>Recent content in Shaders on Halogenica</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
+    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <lastBuildDate>Fri, 16 Nov 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://halogenica.github.io/tags/shaders/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Signed Distance Fields – Part 1</title>
+      <link>https://halogenica.github.io/graphics/signed-distance-fields/</link>
+      <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/signed-distance-fields/</guid>
+      <description>&lt;p&gt;So there is this cool technique that had gained significant popularity in the demoscene called &amp;ldquo;Signed Distance Fields&amp;rdquo;. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. I wanted to play around with some GLSL and thought this would be a really interesting algorithm to take a look at. You can see some of the power of these types of functions in a presentation that smash of fairlight (Matt Swaboda) gave at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,185 +1,299 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Beautiful Hugo</title>
+    <title>Halogenica</title>
     <link>https://halogenica.github.io/</link>
-    <description>Recent content on Beautiful Hugo</description>
+    <description>Recent content on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
-    <lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
+    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <lastBuildDate>Wed, 14 Jan 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://halogenica.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Photoswipe Gallery Sample</title>
-      <link>https://halogenica.github.io/post/2017-03-20-photoswipe-gallery-sample/</link>
-      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2017-03-20-photoswipe-gallery-sample/</guid>
-      <description>&lt;p&gt;Beautiful Hugo adds a few custom shortcodes created by &lt;a href=&#34;https://www.liwen.id.au/heg/&#34;&gt;Li-Wen Yip&lt;/a&gt; and &lt;a href=&#34;https://github.com/GjjvdBurg/HugoPhotoSwipe&#34;&gt;Gert-Jan van den Berg&lt;/a&gt; for making galleries with &lt;a href=&#34;http://photoswipe.com&#34;&gt;PhotoSwipe&lt;/a&gt; .&lt;/p&gt;
+      <title>Fez Viewer</title>
+      <link>https://halogenica.github.io/tools/fez-viewer/</link>
+      <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/tools/fez-viewer/</guid>
+      <description>&lt;p&gt;Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better view of the game, I was looking for a way to visualize the levels.&lt;/p&gt;
 
-
-
-&lt;div class=&#34;gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition&#34; itemscope itemtype=&#34;http://schema.org/ImageGallery&#34;&gt;
-	  
-  
-&lt;link rel=&#34;stylesheet&#34; href=&#34;https://halogenica.github.io/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/hexagon-thumb.jpg&#39;);&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://halogenica.github.io/img/hexagon-thumb.jpg&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;https://halogenica.github.io/img/hexagon.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-  
-
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/sphere-thumb.jpg&#39;);&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://halogenica.github.io/img/sphere-thumb.jpg&#34; alt=&#34;Sphere&#34;/&gt;
-    &lt;/div&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Sphere&lt;/p&gt;
-      &lt;/figcaption&gt;
-    &lt;a href=&#34;https://halogenica.github.io/img/sphere.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-  
-
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/triangle-thumb.jpg&#39;);&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://halogenica.github.io/img/triangle-thumb.jpg&#34; alt=&#34;This is a long comment about a triangle&#34;/&gt;
-    &lt;/div&gt;
-      &lt;figcaption&gt;
-          &lt;p&gt;Triangle&lt;/p&gt;
-      &lt;/figcaption&gt;
-    &lt;a href=&#34;https://halogenica.github.io/img/triangle.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
+&lt;video loop autoplay src=&#34;https://halogenica.github.io/img/tools/fez-viewer/fox.mp4&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Big Image Sample</title>
-      <link>https://halogenica.github.io/post/2017-03-07-bigimg-sample/</link>
-      <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2017-03-07-bigimg-sample/</guid>
-      <description>&lt;p&gt;The image banners at the top of the page are refered to as &amp;ldquo;bigimg&amp;rdquo; in this theme. They are optional, and one more more can be specified. If more than one is specified, the images rotate every 10 seconds. In the front matter, bigimgs are specified using an array of hashes.&lt;/p&gt;
+      <title>Cull Shot</title>
+      <link>https://halogenica.github.io/games/cull-shot/</link>
+      <pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/cull-shot/</guid>
+      <description>&lt;p&gt;Cull Shot is a single player time attack shooter. It was created for Ludum Dare 29, with the theme &amp;ldquo;Beneath the Surface&amp;rdquo;. The player holds a button to charge up a &amp;ldquo;cull shot&amp;rdquo;; the longer you hold the button the further the shot is fired. The shot reveals red cubes underneath a diagonal landscape. Pressing another button will capture these cubes, each cube extending the time limit. The objective is simply to last as long as possible.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Math Sample</title>
-      <link>https://halogenica.github.io/post/2017-03-05-math-sample/</link>
-      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2017-03-05-math-sample/</guid>
-      <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;
+      <title>Sharing Resources Between DirectX and OpenGL</title>
+      <link>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</guid>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;https://halogenica.github.io/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
 
-&lt;p&gt;$$
-\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
-$$&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. There are a number of reasons why this is useful, particularly in tools where you may wish to compare multiple rendering engines simultaneously. With this technique it is also possible to efficiently perform some rendering operations on one API to a render target, and switch to the other API to continue rendering to that render target. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to textures and render targets in graphics memory regardless of API has the potential of efficiently pipelining surfaces through multiple discrete renderers.&lt;/p&gt;
 
-&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Code Sample</title>
-      <link>https://halogenica.github.io/post/2016-03-08-code-sample/</link>
-      <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2016-03-08-code-sample/</guid>
-      <description>&lt;p&gt;The following are two code samples using syntax highlighting.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://halogenica.github.io/bin/graphics/sharing-resources-between-directx-and-opengl/WGL_NV_DX_interop_demo.zip&#34;&gt;WGL_NV_DX_interop_demo.zip&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Flake it till you make it</title>
-      <link>https://halogenica.github.io/post/2015-02-26-flake-it-till-you-make-it/</link>
-      <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2015-02-26-flake-it-till-you-make-it/</guid>
-      <description>Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?</description>
+      <title>Monitor Overclock</title>
+      <link>https://halogenica.github.io/hardware/monitor-overclock/</link>
+      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/monitor-overclock/</guid>
+      <description>&lt;p&gt;In late 2012 I decided to try out an imported Korean Yamakasi 27&amp;rdquo;; 2560x1440 IPS display. These have become particularly popular because of the high quality panels (the same as the Dell and Apple high-end monitors) at less than half the price, with some early models capable of overclocking to 120Hz. I decided the benefits outweighed the risks of spending so much money on a monitor with essentially no warranty. The panel was excellent, with no backlight bleed, excellent color, no dead pixels, and good response time. Unfortunately after 1 year the DVI board fried, and I ended up with similar problems to the one below:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Test markdown</title>
-      <link>https://halogenica.github.io/post/2015-02-20-test-markdown/</link>
-      <pubDate>Fri, 20 Feb 2015 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2015-02-20-test-markdown/</guid>
-      <description>You can write regular markdown here and Jekyll will automatically convert it to a nice webpage. I strongly encourage you to take 5 minutes to learn how to write in markdown - it&amp;rsquo;ll teach you how to transform regular text into bold/italics/headings/tables/etc.
-Here is some bold text
-Here is a secondary heading Here&amp;rsquo;s a useless table:
-   Number Next number Previous number     Five Six Four   Ten Eleven Nine   Seven Eight Six   Two Three One    How about a yummy crepe?</description>
+      <title>Aggrogate</title>
+      <link>https://halogenica.github.io/games/aggrogate/</link>
+      <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/aggrogate/</guid>
+      <description>&lt;p&gt;Aggrogate is a 2 player action puzzle game. Each player plays on half the screen, and controls light and dark cubes of a specific color range (light/dark purple or light/dark green). Each player can &amp;ldquo;shoot&amp;rdquo; either a light or dark cube of their own color into a spot adjacent to any existing cube. By connecting 4 or more cubes of the same color (all dark green, or light purple, etc.) then those connected cubes disappear. The first person to clear all the cubes in their color range wins. The players each have a different viewport of the same collection of cubes, and by &amp;ldquo;shooting&amp;rdquo; a cube they cause the collection of cubes to spin; for both themselves and their opponent.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>To be</title>
-      <link>https://halogenica.github.io/post/2015-02-13-hamlet-monologue/</link>
-      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2015-02-13-hamlet-monologue/</guid>
-      <description>To be, or not to be&amp;ndash;that is the question: Whether &amp;lsquo;tis nobler in the mind to suffer The slings and arrows of outrageous fortune Or to take arms against a sea of troubles And by opposing end them. To die, to sleep&amp;ndash; No more&amp;ndash;and by a sleep to say we end The heartache, and the thousand natural shocks That flesh is heir to. &amp;lsquo;Tis a consummation Devoutly to be wished. To die, to sleep&amp;ndash; To sleep&amp;ndash;perchance to dream: ay, there&amp;rsquo;s the rub, For in that sleep of death what dreams may come When we have shuffled off this mortal coil, Must give us pause.</description>
+      <title>Zero Zen</title>
+      <link>https://halogenica.github.io/games/zero-zen/</link>
+      <pubDate>Mon, 29 Apr 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/zero-zen/</guid>
+      <description>&lt;p&gt;Zero Zen is a 2-4 player game, most easily described as &amp;ldquo;sumo wrestling with airplanes&amp;rdquo;. Each player controls a plane with left/right rotation, a thruster to move forward, and a &amp;ldquo;shoot&amp;rdquo; button which fires a shotgun blast with tremendous kickback. The flying physics works similar to Asteroids, where your ship will continue coasting after accelerating. The bullets don&amp;rsquo;t do any damage, they just push players around. The objective is to knock all opponents into the outer walls to be the last person standing.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Dear diary</title>
-      <link>https://halogenica.github.io/post/2015-01-27-dear-diary/</link>
-      <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2015-01-27-dear-diary/</guid>
-      <description>What is it with that Mary girl? Dragging me to school every day. As if I had a choice. What you don&amp;rsquo;t hear in those nursery rhymes is that she starves me if I don&amp;rsquo;t go to school with her; it&amp;rsquo;s the only way I can stay alive! I&amp;rsquo;m thinking about being adopted by Little Bo Peep, sure I may get lost, but anything is better than being with Mary and those little brats at school (shudder, shudder).</description>
+      <title>Gameboy Backlight</title>
+      <link>https://halogenica.github.io/hardware/gameboy-backlight/</link>
+      <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/gameboy-backlight/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Chiptune&amp;rdquo; is a term used to describe music created using specifically limited hardware, usually for classic computer equipment like the Gameboy, the C64, etc. I&amp;rsquo;ve always found chiptune music interesting, and wanted to try my hand at making some with an original gameboy and LSDJ. Since I wanted to play around with it before bed, I decided to install a backlight in my gameboy, from &lt;a href=&#34;http://store.kitsch-bent.com/&#34;&gt;KitschBent&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Soccer</title>
-      <link>https://halogenica.github.io/post/2015-01-19-soccer/</link>
-      <pubDate>Mon, 19 Jan 2015 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2015-01-19-soccer/</guid>
-      <description>From Wikipedia:
-Association football, more commonly known as football or soccer,[2] is a sport played between two teams of eleven players with a spherical ball. It is played by 250 million players in over 200 countries, making it the world&amp;rsquo;s most popular sport.[3][4][5][6] The game is played on a rectangular field with a goal at each end. The object of the game is to score by getting the ball into the opposing goal.</description>
+      <title>MIDI Controller</title>
+      <link>https://halogenica.github.io/hardware/midi-controller/</link>
+      <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/midi-controller/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been interested in making some nice electronic music and sound effects for my games. I tend to find the UI of different VSTs frustrating, so I was interested in getting a MIDI controller that could help speed things up. I&amp;rsquo;m also interested in the possibilities of rigging the MIDI knobs to variables in the code so I could tweak different parameters in real time. Like any good (over-)engineer, I researched what it might take to put one together myself. For whatever reason I find this sort of controller hardware fascinating.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Pirates arrrr</title>
-      <link>https://halogenica.github.io/post/2015-01-15-pirates/</link>
-      <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2015-01-15-pirates/</guid>
-      <description>Piracy is typically an act of robbery or criminal violence at sea. The term can include acts committed on land, in the air, or in other major bodies of water or on a shore. It does not normally include crimes committed against persons traveling on the same vessel as the perpetrator (e.g. one passenger stealing from others on the same vessel). The term has been used throughout history to refer to raids across land borders by non-state agents.</description>
+      <title>Signed Distance Fields – Part 1</title>
+      <link>https://halogenica.github.io/graphics/signed-distance-fields/</link>
+      <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/signed-distance-fields/</guid>
+      <description>&lt;p&gt;So there is this cool technique that had gained significant popularity in the demoscene called &amp;ldquo;Signed Distance Fields&amp;rdquo;. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. I wanted to play around with some GLSL and thought this would be a really interesting algorithm to take a look at. You can see some of the power of these types of functions in a presentation that smash of fairlight (Matt Swaboda) gave at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>First post!</title>
-      <link>https://halogenica.github.io/post/2015-01-04-first-post/</link>
-      <pubDate>Mon, 05 Jan 2015 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/post/2015-01-04-first-post/</guid>
-      <description>This is my first post, how exciting!</description>
+      <title>Serendipity with Cubes</title>
+      <link>https://halogenica.github.io/games/serendipity-with-cubes/</link>
+      <pubDate>Mon, 23 Apr 2012 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/serendipity-with-cubes/</guid>
+      <description>&lt;p&gt;Serendipity with Cubes is a relaxing, solitary puzzle game. The objective is to connect a &amp;ldquo;path&amp;rdquo; of like colors between the two pulsing cubes. Click on one cube to select it and any adjacent cube to swap their colors. A &amp;ldquo;path&amp;rdquo; is comprised of all adjacent cubes of the same color. Once a path is created between the pulsing cubes, all cubes in that path are cleared from the puzzle. Win the game by clearing all cubes from the puzzle. It is possible to lose the game if cubes are cleared such that there are some cubes that can no longer be connected to any other cubes, or if there is only a single cube remaining of a specific color.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>About me</title>
-      <link>https://halogenica.github.io/page/about/</link>
+      <title>Ray Casting and Picking Using Bullet Physics</title>
+      <link>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</link>
+      <pubDate>Mon, 13 Feb 2012 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</guid>
+      <description>&lt;p&gt;I just recently got picking working using the Bullet Physics Engine. Picking is a way to &amp;ldquo;pick&amp;rdquo; an object via a primitive (triangle) using a cursor from the camera&amp;rsquo;s perspective. Hovering your mouse cursor over an object and clicking on it is obviously a very intuitive way to interact with a scene. However, it&amp;rsquo;s not as intuitive to program, because the location selected is in 2D screen coordinates, and not 3D world coordinates. The difficulty in picking really lies in somehow determining the 3D coordinate space of the object to select. First, lets see what I&amp;rsquo;m talking about.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/T1ZK3WE4FrQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/1XUKusacGro&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Scriptable Asset Loading</title>
+      <link>https://halogenica.github.io/software/scriptable-asset-loading/</link>
+      <pubDate>Mon, 11 Jul 2011 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/software/scriptable-asset-loading/</guid>
+      <description>&lt;p&gt;In the last few months, I&amp;rsquo;ve been spending a considerable amount of time fleshing out some tedious but necessary parts of my game. I realized that since I&amp;rsquo;m a one-man army, I need the ability to very quickly get all of my ideas out and into a playable form without a lot of process and layers of tools. Unfortunately, the only way to achieve a very seamless workflow is by specializing your tools, which means rolling my own level editor and game formats. These things are nice to have anyway, but I believe that the time I invest in these tools will pay off in even the very first game I make with them. I decided I needed a quick and easy way to import models and other game assets, a scripting language (I chose Lua) for data definition and eventually scripted events and possibly game rules, and a level editor that allows rapid building and playtesting of open 3D worlds.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>From an “is-a” to a “has-a” Object Model</title>
+      <link>https://halogenica.github.io/software/from-an-is-a-to-a-has-a-object-model/</link>
+      <pubDate>Fri, 22 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/software/from-an-is-a-to-a-has-a-object-model/</guid>
+      <description>&lt;p&gt;When evolving my rough particle system into a (very targeted) game engine, I started to learn why object oriented design has gone out of favor for many game engines. From a design standpoint, the particle system was a learning project where I tried to leverage C++ inheritance as much as I could. For the game engine, I attempted to model my game objects using an inheritance structure as well. I felt that in the real world, nearly everything falls into some sort of classification, often with distinct parent-child relationships. However, as I began adding game specific objects to my engine, I realized that not only is it prohibitively difficult to try to model the real world (the way I felt it should be modeled) due to the sheer volume and complexity, but game objects are simply an approximation of real world occurrences, and as such they tend to &amp;ldquo;cheat&amp;rdquo; to achieve a certain effect. Objects in a game can choose to be invisible, or defy the laws of physics. This basically breaks whatever elegant classification structure I had planned. Luckily, this can be addressed by converting from an &amp;ldquo;is-a&amp;rdquo; model (where an Object &amp;ldquo;is a&amp;rdquo; physics-based object) to a &amp;ldquo;has-a&amp;rdquo; model, (where an object &amp;ldquo;has a&amp;rdquo; physics component). In this model, objects will contain pointers to optional collections of data and functionality.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Particle System</title>
+      <link>https://halogenica.github.io/graphics/particle-system/</link>
+      <pubDate>Wed, 22 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/particle-system/</guid>
+      <description>&lt;p&gt;I saw a video online recently of several cubes flying into the scene and stacking up to form a larger cube. I thought it was a pretty simple yet powerful effect. The effect was achieved using Particle Flow, so the movement of the particles are entirely animated and not in real time. After seeing this, I immediately wanted to try it, but with a more general solution. So, off I went to write a physics system for my particle engine.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/PXYOYEgjDXQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CUDA Design Rule Checking</title>
+      <link>https://halogenica.github.io/tools/cuda-design-rule-checking/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/tools/cuda-design-rule-checking/</guid>
+      <description>&lt;p&gt;Design Rule Checking (DRC) of semiconductor layouts is a massively independently parallel problem, and well suited for CUDA. As part of an Independent Study, my friend Jeremy Espenshade and I implemented DRC algorithms using CUDA and achieved approximately 25-30x speedup of the checking algorithm on a Tesla card from 2009.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mini Server</title>
+      <link>https://halogenica.github.io/hardware/mini-server/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/mini-server/</guid>
+      <description>&lt;p&gt;This is an old server build when mini desktops were pretty rare (Shuttle was the most popular solution at the time). I wanted to build a small, efficient, always-on server. The system could be used as a home theater PC, act as a backup server, host public and sandbox websites, code repositories and many other things. With the price of storage dropping and some impressive mini-itx motherboard options out there, the perfect storm of hardware pushed me to build a mini-server.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Remote Controlled Turret</title>
+      <link>https://halogenica.github.io/hardware/remote-controlled-turret/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/remote-controlled-turret/</guid>
+      <description>&lt;p&gt;A pneumatic nerf turret, controllable via a flash interface over the internet. It holds six shots, has a webcam for aiming, LEDs for use in the dark, an approximate range of 20 feet, with hundreds of shots between tank refills.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Volume Rendering using GPGPU</title>
+      <link>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</link>
+      <pubDate>Mon, 15 Jun 2009 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</guid>
+      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; an embarrassingly parallel algorithm also commonly used in ray tracing. There has been growing interest in performing general purpose computations on graphics processing units (GPGPU), which are capable exploiting parallel applications and yielding far greater performance than sequential implementations on CPUs. Modern GPUs allow for rapid acceleration of volume rendering applications, offering affordable high performance visualization systems.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Volume Rendering on the PSP</title>
+      <link>https://halogenica.github.io/graphics/volume-rendering-on-the-psp/</link>
+      <pubDate>Sun, 15 Feb 2009 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/volume-rendering-on-the-psp/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve long been active in PSP development and decided to have some fun with graphics on the PSP. I asked my university to order two PSP dev systems and I got to work porting my ray tracer to the PSP. As a team effort with three other graphics enthusiasts, we decided to accelerate hypertexturing on the PSP using the VFPU. We ended up with a ray tracer, hypertexturer, and volume ray caster working on the PSP capable of displaying a 64x64x64 voxel volume.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hypertexturing</title>
+      <link>https://halogenica.github.io/graphics/hypertexturing/</link>
+      <pubDate>Mon, 19 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/hypertexturing/</guid>
+      <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;
+
+&lt;video loop autoplay src=&#34;https://halogenica.github.io/img/graphics/hypertexturing/reflective_hypertexture.mp4&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ray Tracer</title>
+      <link>https://halogenica.github.io/graphics/ray-tracer/</link>
+      <pubDate>Mon, 15 Dec 2008 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/ray-tracer/</guid>
+      <description>&lt;p&gt;This was my first ray tracer, implemented on the CPU using OpenGL and &lt;a href=&#34;http://www.opengl.org/resources/libraries/glut/&#34;&gt;GLUT&lt;/a&gt; to present to the screen, and coded in &lt;a href=&#34;http://www.bloodshed.net/devcpp.html&#34;&gt;Dev-C++&lt;/a&gt;. It is largely inspired by the ray tracer used in the book &lt;a href=&#34;http://www.raytracegroundup.com/&#34;&gt;Ray Tracing from the Ground Up&lt;/a&gt;, an excellent and highly recommended book on ray tracing by Kevin Suffern.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>First Graphics Project</title>
+      <link>https://halogenica.github.io/graphics/first-graphics-project/</link>
+      <pubDate>Fri, 14 Dec 2007 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/first-graphics-project/</guid>
+      <description>&lt;p&gt;My very first graphics project. It&amp;rsquo;s written in C, and uses old fixed-function &lt;a href=&#34;http://www.opengl.org/&#34;&gt;OpenGL&lt;/a&gt; and &lt;a href=&#34;http://www.opengl.org/resources/libraries/glut/&#34;&gt;GLUT&lt;/a&gt;. The code is pretty sloppy as most first attempts go. There are a few interactive elements to this project, with the box spreading apart and interesting use of blending. As the transparent surfaces occlude other geometry, the geometry &amp;ldquo;disappears&amp;rdquo; and shapes are revealed inside the formerly opaque geometry.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://halogenica.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
-      <guid>https://halogenica.github.io/page/about/</guid>
-      <description>My name is Inigo Montoya. I have the following qualities:
- I rock a great mustache I&amp;rsquo;m extremely loyal to my family  What else do you need?
-my history To be honest, I&amp;rsquo;m having some trouble remembering right now, so why don&amp;rsquo;t you just watch my movie and it will answer all your questions.</description>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/about/</guid>
+      <description>Hello and welcome! I use this site to catalog my projects and share my discoveries with friends. I work in video games and computer graphics, with a background in both hardware and software. I also have a ton of hobbies including making gadgets, creative programming, and creating collectible figures/miniatures. I&amp;rsquo;m very particular about design and interested in how things work, so I tend to build a lot of things from scratch.</description>
     </item>
     
   </channel>

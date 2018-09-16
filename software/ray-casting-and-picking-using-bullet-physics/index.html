@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Ray Casting and Picking Using Bullet Physics</title>
+  <meta property="og:title" content="Ray Casting and Picking Using Bullet Physics" />
+  <meta name="twitter:title" content="Ray Casting and Picking Using Bullet Physics" />
+  <meta name="description" content="I just recently got picking working using the Bullet Physics Engine. Picking is a way to &ldquo;pick&rdquo; an object via a primitive (triangle) using a cursor from the camera&rsquo;s perspective. Hovering your mouse cursor over an object and clicking on it is obviously a very intuitive way to interact with a scene. However, it&rsquo;s not as intuitive to program, because the location selected is in 2D screen coordinates, and not 3D world coordinates. The difficulty in picking really lies in somehow determining the 3D coordinate space of the object to select. First, lets see what I&rsquo;m talking about.
+
+
+
+  
+
+
+
+
+  
+
+
+
+">
+  <meta property="og:description" content="I just recently got picking working using the Bullet Physics Engine. Picking is a way to &ldquo;pick&rdquo; an object via a primitive (triangle) using a cursor from the camera&rsquo;s perspective. Hovering your mouse cursor over an object and clicking on it is obviously a very intuitive way to interact with a scene. However, it&rsquo;s not as intuitive to program, because the location selected is in 2D screen coordinates, and not 3D world coordinates. The difficulty in picking really lies in somehow determining the 3D coordinate space of the object to select. First, lets see what I&rsquo;m talking about.
+
+
+
+  
+
+
+
+
+  
+
+
+
+">
+  <meta name="twitter:description" content="I just recently got picking working using the Bullet Physics Engine. Picking is a way to &ldquo;pick&rdquo; an object via a primitive (triangle) using a cursor from the camera&rsquo;s perspective. …">
+  <meta name="author" content="Michael Romero"/>
+  <link href='https://halogenica.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@halogenica" />
+  <meta name="twitter:creator" content="@halogenica" />
+  <meta property="og:url" content="https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Halogenica" />
+
+  <meta name="generator" content="Hugo 0.48" />
+  <link rel="canonical" href="https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/" />
+  <link rel="alternate" href="https://halogenica.github.io/index.xml" type="application/rss+xml" title="Halogenica">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://halogenica.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://halogenica.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://halogenica.github.io/css/codeblock.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://halogenica.github.io">Halogenica</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Games" href="/games/">Games</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Graphics" href="/graphics/">Graphics</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tools" href="/tools/">Tools</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Software" href="/software/">Software</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Hardware" href="/hardware/">Hardware</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Ray Casting and Picking Using Bullet Physics</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on February 13, 2012
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I just recently got picking working using the Bullet Physics Engine. Picking is a way to &ldquo;pick&rdquo; an object via a primitive (triangle) using a cursor from the camera&rsquo;s perspective. Hovering your mouse cursor over an object and clicking on it is obviously a very intuitive way to interact with a scene. However, it&rsquo;s not as intuitive to program, because the location selected is in 2D screen coordinates, and not 3D world coordinates. The difficulty in picking really lies in somehow determining the 3D coordinate space of the object to select. First, lets see what I&rsquo;m talking about.</p>
+
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/T1ZK3WE4FrQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/1XUKusacGro" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+
+<p></p>
+
+<p>The first step in determining the 3D coordinate associated with a click is to calculate a ray that would pass from camera position (your vantage point of the scene) through whatever object was clicked on. Another way of looking at this is that viewing a 2D representation of a 3D image essentially flattens 3D space into 2D space. Clicking a point in 2D will effectively highlight a line in 3D space. This line is an equation describing all 3D points which contribute to a 2D pixel. This is known as ray casting, and is used very frequently in computer graphics with techniques such as ray tracing, ray marching, etc. It is also used frequently in physics engines, which we will take advantage of.</p>
+
+<p>In order to get the ray in world coordiantes, we need to work backwards from a final rendered image. This requires undoing the perspective and view transformations that were done by the camera. A bit of background information on cameras is required to fully understand this algorithm. This wikipedia entry on <a href="http://en.wikipedia.org/wiki/3D_projection#Perspective_projection">Perspective Projection</a> details how cameras project 3D images, however I suggest just looking at the diagram which is worth a thousand words, courtesy of wikipedia:</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/software/ray-casting-and-picking-using-bullet-physics/Perspective_Transform_Diagram.png" />
+    </div>
+    <a href="/img/software/ray-casting-and-picking-using-bullet-physics/Perspective_Transform_Diagram.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>The black &ldquo;eye&rdquo; at the bottom represents the camera position, and the origin of all rays that extend through the scene. The horizontal line represents the screen. The grey line extending from the eye to the yellow square can represent our ray. The view transformation redescribes coordinates in relation to the camera position (your view). The projection transformation redescribes coordinates so that the further you are from the camera, the wider and taller your field of view is, or in other words so that objects in the distance appear smaller. Also noteworthy is the near and far clip planes. These are the minimum and maximum distance of a viewable object; anything closer to the camera position than the near clip plane or further than the far clip plane will not be viewable. The following code was adapted from three different sources noted in the comments, the most informational of which is this page on <a href="http://www.mvps.org/directx/articles/rayproj.htm">Ray Projection</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kr">inline</span> <span class="n">D3DXVECTOR3</span> <span class="n">Camera</span><span class="o">::</span><span class="n">GetPickRay</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Ray Casting algorithms from:
+</span><span class="c1"></span>    <span class="c1">//
+</span><span class="c1"></span>    <span class="c1">// http://www.mvps.org/directx/articles/rayproj.htm
+</span><span class="c1"></span>    <span class="c1">// DX SDK Picking sample
+</span><span class="c1"></span>    <span class="c1">// Bullet demos
+</span><span class="c1"></span>
+    <span class="c1">// Find screen coordinates normalized to -1,1
+</span><span class="c1"></span>    <span class="n">D3DXVECTOR3</span> <span class="n">coord</span><span class="p">;</span>
+    <span class="n">coord</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="p">(</span> <span class="mf">2.0f</span> <span class="o">*</span> <span class="n">x</span> <span class="p">)</span> <span class="o">/</span> <span class="n">SCREEN_WIDTH</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>
+    <span class="n">coord</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span> <span class="mf">2.0f</span> <span class="o">*</span> <span class="n">y</span> <span class="p">)</span> <span class="o">/</span> <span class="n">SCREEN_HEIGHT</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>
+    <span class="n">coord</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0f</span><span class="p">;</span>
+
+    <span class="c1">// Back project the ray from screen to the far clip plane
+</span><span class="c1"></span>    <span class="n">coord</span><span class="p">.</span><span class="n">x</span> <span class="o">/=</span> <span class="n">m_matProj</span><span class="p">.</span><span class="n">_11</span><span class="p">;</span>
+    <span class="n">coord</span><span class="p">.</span><span class="n">y</span> <span class="o">/=</span> <span class="n">m_matProj</span><span class="p">.</span><span class="n">_22</span><span class="p">;</span>
+
+    <span class="n">D3DXMATRIX</span> <span class="n">matinv</span><span class="p">;</span>
+    <span class="n">D3DXMatrixInverse</span><span class="p">(</span><span class="o">&amp;</span><span class="n">matinv</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_matView</span><span class="p">);</span>
+
+    <span class="n">coord</span><span class="o">*=</span><span class="n">FAR_CLIP</span><span class="p">;</span>
+    <span class="n">D3DXVec3TransformCoord</span><span class="p">(</span><span class="o">&amp;</span><span class="n">coord</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">coord</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">matinv</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">coord</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>With this ray calculated, we can use it to determine what objects the ray intersects with. More specifically we&rsquo;re interested in the object closest to the camera, as that&rsquo;s the object the view is probably going to see and will therefore intend to be picking. However, the question of &ldquo;what is the closest object this pixel belongs to?&rdquo; is not a trivial one. The GPU has done all the work to perform the vertex transformations and rasterization, and generally speaking no information is saved to indicate which game object, however you choose to represent it, corresponds with a pixel. This represents a relatively complex search problem, where for every triangle/primitive in a scene, we must determine which ones intersect with the ray, and of those which is the closest to the eye (or more accurately the near clip plane) along that ray. This has linear O(n) complexity with respect to the amount of geometry in the scene.</p>
+
+<p>My particular game has the advantage of using Bullet physics for the physics engine. The physics engine requires me to describe all physically based objects with a bounding box of some kind; something to represent the physical response of an object of arbitrary geometry. For example, it&rsquo;s impossible to make a perfect sphere out of triangles, and we do our best to approximate a sphere using triangles when rendering. However with the physics engine, the equation describing a sphere is far more convenient and efficient. This is important for picking because instead of searching all the triangles that may be used to render a sphere, we simply need to perform a hit test with the sphere we registered with the physics engine. Even, better, the physics engine can do all of these hit tests for us in an optimized fashion. And typically, there are less physically based objects in a scene with coarser bounding boxes than geometry, translating to fewer and simpler equations to determine what we are intersecting with.</p>
+
+<p>Bullet provides a function called <a href="http://bulletphysics.com/Bullet/BulletFull/classbtCollisionWorld.html#aaac6675c8134f6695fecb431c72b0a6a">rayTest()</a> that takes the start and end coordinates of the ray we computed earlier, and returns a structure defining either all of, or the closest object the ray interscted with, as well as the 3D coordinate of the intersection. The code below shows how I use this to pick an object when a user clicks on it, as well as move it around if the hold and drag the mouse. The specific code for adding the Dof6 constraint comes straight from the demo code that comes with Bullet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">    <span class="n">m_rayFrom</span> <span class="o">=</span> <span class="n">m_pCamera</span><span class="o">-&gt;</span><span class="n">m_pos</span><span class="p">;</span>
+    <span class="n">m_rayTo</span> <span class="o">=</span> <span class="n">m_pCamera</span><span class="o">-&gt;</span><span class="n">GetPickRay</span><span class="p">(</span><span class="n">m_cursorCoords</span><span class="p">.</span><span class="n">x</span><span class="p">(),</span> <span class="n">m_cursorCoords</span><span class="p">.</span><span class="n">y</span><span class="p">());</span>
+
+    <span class="n">btVector3</span> <span class="n">btRayFrom</span> <span class="o">=</span> <span class="n">btVector3</span><span class="p">(</span><span class="n">m_rayFrom</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">m_rayFrom</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">m_rayFrom</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+    <span class="n">btVector3</span> <span class="n">btRayTo</span> <span class="o">=</span> <span class="n">btVector3</span><span class="p">(</span><span class="n">m_rayTo</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">m_rayTo</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">m_rayTo</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">g_pInput</span><span class="o">-&gt;</span><span class="n">MouseButtonPressed</span><span class="p">(</span><span class="n">PICK</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">btCollisionWorld</span><span class="o">::</span><span class="n">ClosestRayResultCallback</span> <span class="n">rayCallback</span><span class="p">(</span><span class="n">btRayFrom</span><span class="p">,</span><span class="n">btRayTo</span><span class="p">);</span>
+        <span class="n">g_pBtDynamicsWorld</span><span class="o">-&gt;</span><span class="n">rayTest</span><span class="p">(</span><span class="n">btRayFrom</span><span class="p">,</span> <span class="n">btRayTo</span><span class="p">,</span> <span class="n">rayCallback</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rayCallback</span><span class="p">.</span><span class="n">hasHit</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">PhysicsData</span><span class="o">*</span> <span class="n">pPhysicsData</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">PhysicsData</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">rayCallback</span><span class="p">.</span><span class="n">m_collisionObject</span><span class="o">-&gt;</span><span class="n">getUserPointer</span><span class="p">());</span>
+            <span class="n">btRigidBody</span><span class="o">*</span> <span class="n">pBody</span> <span class="o">=</span> <span class="n">btRigidBody</span><span class="o">::</span><span class="n">upcast</span><span class="p">(</span><span class="n">rayCallback</span><span class="p">.</span><span class="n">m_collisionObject</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">pBody</span> <span class="o">&amp;&amp;</span> <span class="n">pPhysicsData</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// Code for adding a constraint from Bullet Demo&#39;s DemoApplication.cpp
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">pBody</span><span class="o">-&gt;</span><span class="n">isStaticObject</span><span class="p">()</span> <span class="o">||</span> <span class="n">pBody</span><span class="o">-&gt;</span><span class="n">isKinematicObject</span><span class="p">())</span> <span class="o">&amp;&amp;</span>
+                    <span class="p">(</span><span class="n">pPhysicsData</span><span class="o">-&gt;</span><span class="n">m_InitPhysicsData</span><span class="p">.</span><span class="n">CollisionGroup</span> <span class="o">&amp;</span> <span class="n">COL_PARTICLE</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">m_pickedBody</span> <span class="o">=</span> <span class="n">pBody</span><span class="p">;</span>
+
+                    <span class="n">m_pickPos</span> <span class="o">=</span> <span class="n">rayCallback</span><span class="p">.</span><span class="n">m_hitPointWorld</span><span class="p">;</span>
+
+                    <span class="n">btVector3</span> <span class="n">localPivot</span> <span class="o">=</span> <span class="n">pBody</span><span class="o">-&gt;</span><span class="n">getCenterOfMassTransform</span><span class="p">().</span><span class="n">inverse</span><span class="p">()</span> <span class="o">*</span> <span class="n">m_pickPos</span><span class="p">;</span>
+
+                    <span class="n">btTransform</span> <span class="n">tr</span><span class="p">;</span>
+                    <span class="n">tr</span><span class="p">.</span><span class="n">setIdentity</span><span class="p">();</span>
+                    <span class="n">tr</span><span class="p">.</span><span class="n">setOrigin</span><span class="p">(</span><span class="n">localPivot</span><span class="p">);</span>
+                    <span class="n">btGeneric6DofConstraint</span><span class="o">*</span> <span class="n">dof6</span> <span class="o">=</span> <span class="k">new</span> <span class="n">btGeneric6DofConstraint</span><span class="p">(</span><span class="o">*</span><span class="n">pBody</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setLinearLowerLimit</span><span class="p">(</span><span class="n">btVector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setLinearUpperLimit</span><span class="p">(</span><span class="n">btVector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setAngularLowerLimit</span><span class="p">(</span><span class="n">btVector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setAngularUpperLimit</span><span class="p">(</span><span class="n">btVector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+
+                    <span class="n">g_pBtDynamicsWorld</span><span class="o">-&gt;</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">dof6</span><span class="p">);</span>
+                    <span class="n">m_pickConstraint</span> <span class="o">=</span> <span class="n">dof6</span><span class="p">;</span>
+
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_CFM</span><span class="p">,</span><span class="mf">0.8f</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_CFM</span><span class="p">,</span><span class="mf">0.8f</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_CFM</span><span class="p">,</span><span class="mf">0.8f</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_CFM</span><span class="p">,</span><span class="mf">0.8f</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_CFM</span><span class="p">,</span><span class="mf">0.8f</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_CFM</span><span class="p">,</span><span class="mf">0.8f</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_ERP</span><span class="p">,</span><span class="mf">0.1f</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_ERP</span><span class="p">,</span><span class="mf">0.1f</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_ERP</span><span class="p">,</span><span class="mf">0.1f</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_ERP</span><span class="p">,</span><span class="mf">0.1f</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_ERP</span><span class="p">,</span><span class="mf">0.1f</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+                    <span class="n">dof6</span><span class="o">-&gt;</span><span class="n">setParam</span><span class="p">(</span><span class="n">BT_CONSTRAINT_STOP_ERP</span><span class="p">,</span><span class="mf">0.1f</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+
+                    <span class="c1">//save mouse position for dragging
+</span><span class="c1"></span>                    <span class="n">m_pickDist</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_pickPos</span> <span class="o">-</span> <span class="n">btRayFrom</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">g_pInput</span><span class="o">-&gt;</span><span class="n">MouseButtonReleased</span><span class="p">(</span><span class="n">PICK</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_pickConstraint</span> <span class="o">&amp;&amp;</span> <span class="n">g_pBtDynamicsWorld</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">g_pBtDynamicsWorld</span><span class="o">-&gt;</span><span class="n">removeConstraint</span><span class="p">(</span><span class="n">m_pickConstraint</span><span class="p">);</span>
+            <span class="k">delete</span> <span class="n">m_pickConstraint</span><span class="p">;</span>
+            <span class="n">m_pickConstraint</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="n">m_pickedBody</span><span class="o">-&gt;</span><span class="n">setDeactivationTime</span><span class="p">(</span> <span class="mf">0.f</span> <span class="p">);</span>
+            <span class="n">m_pickedBody</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">g_pInput</span><span class="o">-&gt;</span><span class="n">MouseButtonDown</span><span class="p">(</span><span class="n">PICK</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">btGeneric6DofConstraint</span><span class="o">*</span> <span class="n">pickCon</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">btGeneric6DofConstraint</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">m_pickConstraint</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pickCon</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">//keep it at the same picking distance
+</span><span class="c1"></span>
+            <span class="n">btVector3</span> <span class="n">btRayTo</span> <span class="o">=</span> <span class="n">btVector3</span><span class="p">(</span><span class="n">m_rayTo</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">m_rayTo</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">m_rayTo</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+            <span class="n">btVector3</span> <span class="n">btRayFrom</span> <span class="o">=</span> <span class="n">btVector3</span><span class="p">(</span><span class="n">m_rayFrom</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">m_rayFrom</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">m_rayFrom</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+            <span class="n">btVector3</span> <span class="n">oldPivotInB</span> <span class="o">=</span> <span class="n">pickCon</span><span class="o">-&gt;</span><span class="n">getFrameOffsetA</span><span class="p">().</span><span class="n">getOrigin</span><span class="p">();</span>
+
+            <span class="n">btVector3</span> <span class="n">newPivotB</span><span class="p">;</span>
+
+            <span class="n">btVector3</span> <span class="n">dir</span> <span class="o">=</span> <span class="n">btRayTo</span> <span class="o">-</span> <span class="n">btRayFrom</span><span class="p">;</span>
+            <span class="n">dir</span><span class="p">.</span><span class="n">normalize</span><span class="p">();</span>
+            <span class="n">dir</span> <span class="o">*=</span> <span class="n">m_pickDist</span><span class="p">;</span>
+
+            <span class="n">newPivotB</span> <span class="o">=</span> <span class="n">btRayFrom</span> <span class="o">+</span> <span class="n">dir</span><span class="p">;</span>
+
+            <span class="n">pickCon</span><span class="o">-&gt;</span><span class="n">getFrameOffsetA</span><span class="p">().</span><span class="n">setOrigin</span><span class="p">(</span><span class="n">newPivotB</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://halogenica.github.io/tags/software/">Software</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/physics/">Physics</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/directx/">DirectX</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/game-engine/">Game Engine</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://halogenica.github.io/software/scriptable-asset-loading/" data-toggle="tooltip" data-placement="top" title="Scriptable Asset Loading">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mike@halogenica.net" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/halogenica" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/halogenica" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/halogenica" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/halogenica" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/angelkatalyst" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/halogenica" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://halogenica.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Michael Romero
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2015
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://halogenica.github.io">Halogenica</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.48</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/main.js"></script>
+<script src="https://halogenica.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

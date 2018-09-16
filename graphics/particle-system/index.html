@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Particle System</title>
+  <meta property="og:title" content="Particle System" />
+  <meta name="twitter:title" content="Particle System" />
+  <meta name="description" content="I saw a video online recently of several cubes flying into the scene and stacking up to form a larger cube. I thought it was a pretty simple yet powerful effect. The effect was achieved using Particle Flow, so the movement of the particles are entirely animated and not in real time. After seeing this, I immediately wanted to try it, but with a more general solution. So, off I went to write a physics system for my particle engine.
+
+
+
+  
+
+
+
+">
+  <meta property="og:description" content="I saw a video online recently of several cubes flying into the scene and stacking up to form a larger cube. I thought it was a pretty simple yet powerful effect. The effect was achieved using Particle Flow, so the movement of the particles are entirely animated and not in real time. After seeing this, I immediately wanted to try it, but with a more general solution. So, off I went to write a physics system for my particle engine.
+
+
+
+  
+
+
+
+">
+  <meta name="twitter:description" content="I saw a video online recently of several cubes flying into the scene and stacking up to form a larger cube. I thought it was a pretty simple yet powerful effect. The effect was achieved using Particle …">
+  <meta name="author" content="Michael Romero"/>
+  <link href='https://halogenica.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://halogenica.github.io/img/graphics/particle-system/particle_system_1.png" />
+  <meta name="twitter:image" content="https://halogenica.github.io/img/graphics/particle-system/particle_system_1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@halogenica" />
+  <meta name="twitter:creator" content="@halogenica" />
+  <meta property="og:url" content="https://halogenica.github.io/graphics/particle-system/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Halogenica" />
+
+  <meta name="generator" content="Hugo 0.48" />
+  <link rel="canonical" href="https://halogenica.github.io/graphics/particle-system/" />
+  <link rel="alternate" href="https://halogenica.github.io/index.xml" type="application/rss+xml" title="Halogenica">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://halogenica.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://halogenica.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://halogenica.github.io/css/codeblock.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://halogenica.github.io">Halogenica</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Games" href="/games/">Games</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Graphics" href="/graphics/">Graphics</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tools" href="/tools/">Tools</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Software" href="/software/">Software</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Hardware" href="/hardware/">Hardware</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Particle System</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 22, 2010
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I saw a video online recently of several cubes flying into the scene and stacking up to form a larger cube. I thought it was a pretty simple yet powerful effect. The effect was achieved using Particle Flow, so the movement of the particles are entirely animated and not in real time. After seeing this, I immediately wanted to try it, but with a more general solution. So, off I went to write a physics system for my particle engine.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/PXYOYEgjDXQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p></p>
+
+<h2 id="particle-system">Particle System</h2>
+
+<p>I began this project with an old particle system I started working on to dig into DX9. It&rsquo;s gone through a few iterations, some architectural and some performance oriented. This version is entirely object oriented, where each emitter, particle, camera, input, etc. are classes. Particle is an abstract class, inherited by a Cube particle in these examples. Most of the details regarding the particular graphics API being used have been abstracted into the respective classes, and the scene can be described without using D3D function calls.</p>
+
+<p>As a performance enhancement, this particle system uses hardware instancing. All particle specific information is transferred to the graphics card via a vertex buffer, with all position, color, and other particle logic performed in the vertex shader. The next major revision will include physics calculations to be performed on the GPU.</p>
+
+
+
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	  
+  
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/graphics/particle-system/particle_system_1.png');">
+      <img itemprop="thumbnail" src="/img/graphics/particle-system/particle_system_1.png" />
+    </div>
+    <a href="/img/graphics/particle-system/particle_system_1.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/graphics/particle-system/particle_system_2.png');">
+      <img itemprop="thumbnail" src="/img/graphics/particle-system/particle_system_2.png" />
+    </div>
+    <a href="/img/graphics/particle-system/particle_system_2.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('/img/graphics/particle-system/particle_system_3.png');">
+      <img itemprop="thumbnail" src="/img/graphics/particle-system/particle_system_3.png" />
+    </div>
+    <a href="/img/graphics/particle-system/particle_system_3.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+</div>
+
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/_MwwbPcVGcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/9-KQBB22ua4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/vv9rNnAAZ8w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+
+<h2 id="spring-physics">Spring Physics</h2>
+
+<p>Now, there are a lot of challenges in getting a particle rocketing through 3D space to land in exactly the right position with physics alone. There are a few options. With physics, we can exponentially increase a force on the particle in the direction of the destination with relation to the distance from the destination. Another possibility is merging a pure physics system with a pure spline animation to allow a random initial velocity, but a guaranteed stopping point.</p>
+
+<p>My first step however, is developing some way to attract the particles to their destination. I decided to start with a spring system. Although the system will exert forces on the particles to aim the particles at the destination, it is very unlikely that they will pass directly through a predetermined point, and instead orbit around the destination.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/u753Xc6VE5k" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>For those interested, here&rsquo;s the nice little gem used to compute the spring force. I modified this algorithm from a cloth simulator used in the book &ldquo;Physics for Game Developers&rdquo;.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">D3DXVECTOR3</span> <span class="n">Collector</span><span class="o">::</span><span class="n">GetForce</span><span class="p">(</span><span class="n">Particle</span> <span class="n">particle</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">forceVector</span> <span class="o">=</span> <span class="n">GetVector</span><span class="p">(</span><span class="n">particle</span><span class="p">);</span>    <span class="c1">// From particle to dest
+</span><span class="c1"></span>    <span class="kt">float</span> <span class="n">length</span> <span class="o">=</span> <span class="n">D3DXVec3Length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">forceVector</span><span class="p">);</span>
+    <span class="kt">float</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>    <span class="c1">// tensile constant
+</span><span class="c1"></span>    <span class="kt">float</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>    <span class="c1">// damping constant
+</span><span class="c1"></span>    <span class="kt">float</span> <span class="n">dot</span> <span class="o">=</span> <span class="n">D3DXVec3Dot</span><span class="p">(</span><span class="o">&amp;</span><span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">forceVector</span><span class="p">);</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">force</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">length</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="n">dot</span> <span class="o">/</span> <span class="n">length</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">forceVector</span> <span class="o">/</span> <span class="n">length</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">force</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="orbits-and-decay">Orbits and Decay</h2>
+
+<p>Attempt number 2 at getting particles to stick to a collector: apply gravitational pull to the collector. The ideal is simple; the closer a particle gets to the collector, the greater the force of gravity acting on the particle towards that collector. In this case, I used the inverse of the distance squared. This produces an &ldquo;Ideal&rdquo; orbital pattern as shown below:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/DulrF682848" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">D3DXVECTOR3</span> <span class="n">Collector</span><span class="o">::</span><span class="n">GetIdealOrbitalForce</span><span class="p">(</span><span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">magVector</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="kt">float</span><span class="o">&amp;</span> <span class="n">magLength</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">grav</span> <span class="o">=</span> <span class="mf">1000.0f</span><span class="p">;</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">force</span> <span class="o">=</span> <span class="n">magVector</span> <span class="o">*</span> <span class="n">grav</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">magLength</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">force</span> <span class="o">/=</span> <span class="p">(</span><span class="n">magLength</span> <span class="o">*</span> <span class="n">magLength</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">force</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This ideal orbital pattern has the obvious problem of not actually attracting the particles into the center, and instead just pulling the particles into an orbit around the collector. To give more realistic physical behavior, we would like to model drag the particle encounters by entering the &ldquo;atmosphere&rdquo; of the collector. The thickness of the atmosphere was modeled as the inverse of the distance squared. Tweaking the constants a bit yields the following results:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/-4V_xsQElCc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">D3DXVECTOR3</span> <span class="n">Collector</span><span class="o">::</span><span class="n">GetOrbitalDecayForce</span><span class="p">(</span><span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">magVector</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="kt">float</span><span class="o">&amp;</span> <span class="n">magLength</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">curVelocity</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">curPos</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">collectorPos</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="kt">float</span><span class="o">&amp;</span> <span class="n">dt</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">force</span> <span class="o">=</span> <span class="n">GetIdealOrbitalForce</span><span class="p">(</span><span class="n">magVector</span><span class="p">,</span> <span class="n">magLength</span><span class="p">);</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">newVelocity</span> <span class="o">=</span> <span class="n">curVelocity</span> <span class="o">+</span> <span class="n">force</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">dt</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">newPos</span> <span class="o">=</span> <span class="n">curPos</span> <span class="o">+</span> <span class="n">newVelocity</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">magVector2</span> <span class="o">=</span> <span class="n">collectorPos</span> <span class="o">-</span> <span class="n">newPos</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">magLength2</span> <span class="o">=</span> <span class="n">D3DXVec3Length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">magVector2</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">damping</span> <span class="o">=</span> <span class="mf">4.0f</span><span class="p">;</span>
+
+        <span class="n">D3DXVECTOR3</span> <span class="n">decayVelocity</span> <span class="o">=</span> <span class="p">((</span><span class="n">magVector2</span> <span class="o">/</span> <span class="n">magLength2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">magVector</span> <span class="o">/</span> <span class="n">magLength</span><span class="p">))</span> <span class="o">/</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">damping</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">magLength2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">decayVelocity</span> <span class="o">/=</span> <span class="p">(</span><span class="n">magLength2</span> <span class="o">*</span> <span class="n">magLength2</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">force</span> <span class="o">+=</span> <span class="n">decayVelocity</span><span class="o">/</span><span class="n">dt</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">force</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Adding this behavior with spring physics we get:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/M-JBRBse5Xs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>This all adds to make a pretty interesting effect. I hadn&rsquo;t optimized the code which models the orbital decay, so I was curious to see what the limitations of the particle system were after performing the physics computations. The physics for each particle is computed on the host, with the final position stored in the instance buffer for each cube to be drawn on the GPU. I&rsquo;m interested to see what kind of speedup is achievable by performing the physics on the GPU, but I&rsquo;ll save that for another day. For now, I was able to achieve 70 FPS on my GTX260 with 20,000 cubes, each with spring physics and orbital decay. Results speak for themselves:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/8xGAlOTyMbM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>After writing these physics calculations, I&rsquo;m beginning to believe that a purely physically based solution to get the kind of flight paths I am interested in does not exist. So, the third iteration of this particle system will use a spline hybrid to guide the particles along a path shaped by the physics calculations, but also guaranteeing the particles will reach their destination within a fixed amount of time.</p>
+
+<h2 id="collector-corner-cases">Collector Corner Cases</h2>
+
+<p>Well, it turns out I was able to guarantee the destination of particles by a deadline. This requires a little bit of cheating; as the lifetime of the particle advances, the velocity vector dictated by the physics is blended with a velocity vector of the same magnitude pointing directly at the destination. This, in combination with a maximum velocity can virtually guarantee that the particle will hit its destination by a specific time. If the velocity vector is blended to point directly at the destination by half the lifetime, and the forces acting on the particle only contribute to increase the velocity towards the destination regardless of its position, then the particle is guaranteed to hit the destination by the end of its life.</p>
+
+<p>The following code accumulates the forces acting on the particle, blends the velocity vector with a vector pointing directly at the destination based on lifetime percentage, and detects if the particle passed through the destination in order to &ldquo;stick&rdquo; it to the destination. The code isn&rsquo;t optimized, and is a bit messy, so take it with a grain of salt. It&rsquo;s also not quite as elegant as I would like. Notice that within a distance of 1, the velocity vector points directly into the collector. This can be considered the event horizon; to save me the headache of dealing with corner cases when calculating forces given a magVector length &lt; 1.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">Collector</span><span class="o">::</span><span class="n">UpdateParticle</span><span class="p">(</span><span class="kt">float</span> <span class="n">dt</span><span class="p">,</span> <span class="n">Particle</span><span class="o">&amp;</span> <span class="n">particle</span><span class="p">,</span> <span class="n">UINT</span> <span class="n">index</span><span class="p">)</span>
+<span class="p">{</span>
+
+    <span class="n">D3DXVECTOR3</span> <span class="n">magVector</span> <span class="o">=</span> <span class="n">GetVector</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="n">index</span><span class="p">);</span>
+    <span class="kt">float</span> <span class="n">magLength</span> <span class="o">=</span> <span class="n">D3DXVec3Length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">magVector</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">magLength</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">force</span> <span class="o">=</span> <span class="n">D3DXVECTOR3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span> <span class="p">,</span><span class="mf">0.0f</span><span class="p">);</span>
+        <span class="n">force</span> <span class="o">+=</span> <span class="n">GetSpringForce</span><span class="p">(</span><span class="n">magVector</span><span class="p">,</span> <span class="n">magLength</span><span class="p">,</span> <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span><span class="p">);</span>
+        <span class="n">force</span> <span class="o">+=</span> <span class="n">GetOrbitalDecayForce</span><span class="p">(</span><span class="n">magVector</span><span class="p">,</span> <span class="n">magLength</span><span class="p">,</span> <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span><span class="p">,</span>
+                                      <span class="n">particle</span><span class="p">.</span><span class="n">m_pos</span><span class="p">,</span> <span class="n">GetDestination</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">dt</span><span class="p">);</span>
+        <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span> <span class="o">+=</span> <span class="n">force</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+
+        <span class="c1">// Calculate blended vector
+</span><span class="c1"></span>        <span class="kt">float</span> <span class="n">velLength</span> <span class="o">=</span> <span class="n">D3DXVec3Length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">perc</span> <span class="o">=</span> <span class="p">((</span><span class="kt">float</span><span class="p">)</span><span class="n">particle</span><span class="p">.</span><span class="n">m_timeElapsed</span> <span class="o">/</span> <span class="p">((</span><span class="kt">float</span><span class="p">)</span><span class="n">particle</span><span class="p">.</span><span class="n">m_lifetime</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+        <span class="n">perc</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">perc</span><span class="p">,</span> <span class="mf">1.0f</span><span class="p">);</span>
+        <span class="n">perc</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="n">perc</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">vec1</span> <span class="o">=</span> <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span> <span class="o">/</span> <span class="n">velLength</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0f</span> <span class="o">-</span> <span class="n">perc</span><span class="p">);</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">vec2</span> <span class="o">=</span> <span class="n">magVector</span> <span class="o">/</span> <span class="n">magLength</span> <span class="o">*</span> <span class="n">perc</span><span class="p">;</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">vec3</span> <span class="o">=</span> <span class="n">vec1</span> <span class="o">+</span> <span class="n">vec2</span><span class="p">;</span>
+        <span class="n">D3DXVec3Normalize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vec3</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vec3</span><span class="p">);</span>
+        <span class="n">velLength</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">velLength</span><span class="p">,</span> <span class="n">MAX_VELOCITY</span><span class="p">);</span>
+        <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span> <span class="o">=</span> <span class="n">vec3</span> <span class="o">*</span> <span class="n">velLength</span><span class="p">;</span>
+        <span class="n">particle</span><span class="p">.</span><span class="n">m_pos</span> <span class="o">+=</span> <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">D3DXVec3Normalize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">magVector</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">magVector</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">velLength</span> <span class="o">=</span> <span class="n">D3DXVec3Length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span><span class="p">);</span>
+        <span class="n">velLength</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">velLength</span><span class="p">,</span> <span class="n">MAX_VELOCITY</span><span class="p">);</span>
+        <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span> <span class="o">=</span> <span class="n">magVector</span> <span class="o">*</span> <span class="n">velLength</span><span class="p">;</span>
+        <span class="n">particle</span><span class="p">.</span><span class="n">m_pos</span> <span class="o">+=</span> <span class="n">particle</span><span class="p">.</span><span class="n">m_velocity</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Fix position if passing through particle
+</span><span class="c1"></span>    <span class="n">D3DXVECTOR3</span> <span class="n">newMagVector</span> <span class="o">=</span> <span class="n">GetVector</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="n">index</span><span class="p">);</span>
+    <span class="n">D3DXVec3Normalize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">newMagVector</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">newMagVector</span><span class="p">);</span>
+
+    <span class="kt">float</span> <span class="n">dot</span> <span class="o">=</span> <span class="n">D3DXVec3Dot</span><span class="p">(</span><span class="o">&amp;</span><span class="n">magVector</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">newMagVector</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">dot</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0f</span> <span class="o">+</span> <span class="n">EPSILON</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">dot</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">1.0f</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">particle</span><span class="p">.</span><span class="n">m_pos</span> <span class="o">=</span> <span class="n">GetDestination</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So, with this new code, I decided to make a nice little demo. Consider this a sneak peak at the various shapes and animations possible by associating individual particles at different collectors:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/Hi8TuutWZCM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="shapes">Shapes</h2>
+
+<p>This update adds the ability to create shapes using a particle collector. The physics for each particle is calculated independently for individual destinations; they do not need to have the same destination. This allows me to specify any number of destinations, which can be moved independently. Because the physics system takes care of tweening between positions, the collector destinations can jump from place to place, and the physics will result in a fluid animation.</p>
+
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/WMaCONhzEes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/b9u7J31sn6A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+
+<p>There was a big feature implemented in this update as well. The last videos I captured of the particle collector had a particularly chaotic nature, because the framerate was tied to the simulation timestep (update and render once per frame), and because the framerate drops during video capture, the numerical integrator in my update phase became far less accurate. There is an excellent article by Glenn Fiedler at his site, <a href="http://gafferongames.com/game-physics/fix-your-timestep/">gafferongames.com</a>. The code below demonstrates how Glenn&rsquo;s example fixed my timestep issues, but all credit should really go to him; it&rsquo;s simply included here to provide another example.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// global declarations
+</span><span class="c1"></span><span class="n">ULONG</span>               <span class="n">timeNow</span><span class="p">;</span>        <span class="c1">// the timestamp of the current frame
+</span><span class="c1"></span><span class="n">ULONG</span>               <span class="n">timePrev</span><span class="p">;</span>       <span class="c1">// the timestamp of the previous frame
+</span><span class="c1"></span><span class="n">ULONG</span>               <span class="n">timeFrame</span><span class="p">;</span>      <span class="c1">// the time delta for the current frame
+</span><span class="c1"></span><span class="n">ULONG</span>               <span class="n">timeSum</span><span class="p">;</span>        <span class="c1">// accumulation of time
+</span><span class="c1"></span><span class="k">const</span> <span class="n">ULONG</span>         <span class="n">timeDelta</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>  <span class="c1">// the constant update time delta
+</span><span class="c1"></span><span class="k">const</span> <span class="n">ULONG</span>         <span class="n">timeMax</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>   <span class="c1">// the constant maximum time delta
+</span><span class="c1"></span>
+<span class="c1">// function prototypes
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">InitScene</span><span class="p">();</span>               <span class="c1">// initialize the scene
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">Update</span><span class="p">(</span><span class="kt">float</span> <span class="n">dt</span><span class="p">);</span>          <span class="c1">// updates the simulation
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">RenderFrame</span><span class="p">();</span>             <span class="c1">// renders a single frame
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">DestroyScene</span><span class="p">();</span>            <span class="c1">// free memory allocated by the scene
+</span><span class="c1"></span>
+
+<span class="c1">// the entry point for any Windows program
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">WINAPI</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span>
+                   <span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span><span class="p">,</span>
+                   <span class="n">LPSTR</span> <span class="n">lpCmdLine</span><span class="p">,</span>
+                   <span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">timePrev</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+    <span class="n">timeNow</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">timeSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">InitScene</span><span class="p">();</span>
+
+    <span class="n">MSG</span> <span class="n">msg</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">TRUE</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">PeekMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PM_REMOVE</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">TranslateMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">);</span>
+            <span class="n">DispatchMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">message</span> <span class="o">==</span> <span class="n">WM_QUIT</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+   
+        <span class="n">timeNow</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+        <span class="n">timeFrame</span> <span class="o">=</span> <span class="n">timeNow</span> <span class="o">-</span> <span class="n">timePrev</span><span class="p">;</span>
+        <span class="n">timePrev</span> <span class="o">=</span> <span class="n">timeNow</span><span class="p">;</span>
+
+        <span class="c1">// practical limitation, don&#39;t let updates overcome framerate
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">timeFrame</span> <span class="o">&gt;</span> <span class="n">timeMax</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">timeFrame</span> <span class="o">=</span> <span class="n">timeMax</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">timeSum</span> <span class="o">+=</span> <span class="n">timeFrame</span><span class="p">;</span>
+
+        <span class="c1">// update at a rate of timeDiff, regardless of framerate
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">timeSum</span> <span class="o">&gt;=</span> <span class="n">timeDelta</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Update</span><span class="p">(</span><span class="n">timeDelta</span> <span class="o">*</span> <span class="mf">.001f</span><span class="p">);</span>
+            <span class="n">timeSum</span> <span class="o">-=</span> <span class="n">timeDelta</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// render once per frame
+</span><span class="c1"></span>        <span class="n">RenderFrame</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">DestroyScene</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">msg</span><span class="p">.</span><span class="n">wParam</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>There were also a number of crucial bugfixes and optimizations I made. My last post has been updated to reflect the bug fixes. A particular performance enhancement was the calculation of the orbital decay force. I wasn&rsquo;t happy with the previous code, which looked something like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">D3DXVECTOR3</span> <span class="n">Collector</span><span class="o">::</span><span class="n">GetOrbitalDecayForce</span><span class="p">(</span><span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">magVector</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="kt">float</span><span class="o">&amp;</span> <span class="n">magLength</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">curVelocity</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">curPos</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">collectorPos</span><span class="p">,</span>
+                                            <span class="k">const</span> <span class="kt">float</span><span class="o">&amp;</span> <span class="n">dt</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">force</span> <span class="o">=</span> <span class="n">GetIdealOrbitalForce</span><span class="p">(</span><span class="n">magVector</span><span class="p">,</span> <span class="n">magLength</span><span class="p">);</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">newVelocity</span> <span class="o">=</span> <span class="n">curVelocity</span> <span class="o">+</span> <span class="n">force</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">dt</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">newPos</span> <span class="o">=</span> <span class="n">curPos</span> <span class="o">+</span> <span class="n">newVelocity</span> <span class="o">*</span> <span class="n">dt</span><span class="p">;</span>
+        <span class="n">D3DXVECTOR3</span> <span class="n">magVector2</span> <span class="o">=</span> <span class="n">collectorPos</span> <span class="o">-</span> <span class="n">newPos</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">magLength2</span> <span class="o">=</span> <span class="n">D3DXVec3Length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">magVector2</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">damping</span> <span class="o">=</span> <span class="mf">4.0f</span><span class="p">;</span>
+
+        <span class="n">D3DXVECTOR3</span> <span class="n">decayVelocity</span> <span class="o">=</span> <span class="p">((</span><span class="n">magVector2</span> <span class="o">/</span> <span class="n">magLength2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">magVector</span> <span class="o">/</span> <span class="n">magLength</span><span class="p">))</span> <span class="o">/</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">damping</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">magLength2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">decayVelocity</span> <span class="o">/=</span> <span class="p">(</span><span class="n">magLength2</span> <span class="o">*</span> <span class="n">magLength2</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">force</span> <span class="o">+=</span> <span class="n">decayVelocity</span><span class="o">/</span><span class="n">dt</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">force</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The problem with the above code is that it computes the position from the force and velocity of the particle, calculates a vector from the previous position and the new position, generates a new velocity vector, and divides by the timestep to get back to a force. Well, I coded it this way just to validate my initial thought process. Now that I know it can achieve the sort of effect I&rsquo;m looking for, I whittled it down to something like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kr">inline</span> <span class="n">D3DXVECTOR3</span> <span class="n">Collector</span><span class="o">::</span><span class="n">GetOrbitalDecayForce</span><span class="p">(</span><span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">magVector</span><span class="p">,</span> <span class="k">const</span> <span class="kt">float</span><span class="o">&amp;</span> <span class="n">magLength</span><span class="p">,</span>
+                                                   <span class="k">const</span> <span class="n">D3DXVECTOR3</span><span class="o">&amp;</span> <span class="n">velVector</span><span class="p">,</span> <span class="k">const</span> <span class="kt">float</span><span class="o">&amp;</span> <span class="n">velLength</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">force</span> <span class="o">=</span> <span class="n">GetIdealOrbitalForce</span><span class="p">(</span><span class="n">magVector</span><span class="p">,</span> <span class="n">magLength</span><span class="p">);</span>
+    <span class="n">D3DXVECTOR3</span> <span class="n">magVector2</span> <span class="o">=</span> <span class="p">(</span><span class="n">magVector</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">velVector</span><span class="p">);</span>
+    <span class="kt">float</span> <span class="n">damping</span> <span class="o">=</span> <span class="mf">100.0f</span><span class="p">;</span>
+    <span class="n">force</span> <span class="o">+=</span> <span class="n">magVector2</span> <span class="o">*</span> <span class="n">velLength</span> <span class="o">*</span> <span class="n">damping</span> <span class="o">/</span> <span class="p">(</span><span class="n">magLength</span> <span class="o">*</span> <span class="n">magLength</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">force</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note that the vectors are now passed in normalized, and their length is included. I made this change to each of my force computations, since each force function would eventually calculate the vector length and normalize. The magVector always points at the collector, and the current velocity vector indicates the direction the particle is moving. We wish to apply some force acting against the particle as it tries to move laterally throughout its orbit of the collector. The simple vector subtraction yields a vector that will act against the lateral movement of the particle, as well as contribute to the force aimed directly at the collector. While this may not be entirely physically accurate, it does yield the same effect, with far less work. It&rsquo;s good to remind yourself, sometimes you don&rsquo;t need perfect physical accuracy, an approximation may be good enough.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://halogenica.github.io/tags/graphics/">Graphics</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/physics/">Physics</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/directx/">DirectX</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/" data-toggle="tooltip" data-placement="top" title="Volume Rendering using GPGPU">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://halogenica.github.io/graphics/signed-distance-fields/" data-toggle="tooltip" data-placement="top" title="Signed Distance Fields – Part 1">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mike@halogenica.net" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/halogenica" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/halogenica" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/halogenica" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/halogenica" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/angelkatalyst" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/halogenica" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://halogenica.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Michael Romero
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2015
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://halogenica.github.io">Halogenica</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.48</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/main.js"></script>
+<script src="https://halogenica.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

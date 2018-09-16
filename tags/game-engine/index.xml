@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Game Engine on Halogenica</title>
+    <link>https://halogenica.github.io/tags/game-engine/</link>
+    <description>Recent content in Game Engine on Halogenica</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
+    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <lastBuildDate>Mon, 13 Feb 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://halogenica.github.io/tags/game-engine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ray Casting and Picking Using Bullet Physics</title>
+      <link>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</link>
+      <pubDate>Mon, 13 Feb 2012 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</guid>
+      <description>&lt;p&gt;I just recently got picking working using the Bullet Physics Engine. Picking is a way to &amp;ldquo;pick&amp;rdquo; an object via a primitive (triangle) using a cursor from the camera&amp;rsquo;s perspective. Hovering your mouse cursor over an object and clicking on it is obviously a very intuitive way to interact with a scene. However, it&amp;rsquo;s not as intuitive to program, because the location selected is in 2D screen coordinates, and not 3D world coordinates. The difficulty in picking really lies in somehow determining the 3D coordinate space of the object to select. First, lets see what I&amp;rsquo;m talking about.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/T1ZK3WE4FrQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/1XUKusacGro&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Scriptable Asset Loading</title>
+      <link>https://halogenica.github.io/software/scriptable-asset-loading/</link>
+      <pubDate>Mon, 11 Jul 2011 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/software/scriptable-asset-loading/</guid>
+      <description>&lt;p&gt;In the last few months, I&amp;rsquo;ve been spending a considerable amount of time fleshing out some tedious but necessary parts of my game. I realized that since I&amp;rsquo;m a one-man army, I need the ability to very quickly get all of my ideas out and into a playable form without a lot of process and layers of tools. Unfortunately, the only way to achieve a very seamless workflow is by specializing your tools, which means rolling my own level editor and game formats. These things are nice to have anyway, but I believe that the time I invest in these tools will pay off in even the very first game I make with them. I decided I needed a quick and easy way to import models and other game assets, a scripting language (I chose Lua) for data definition and eventually scripted events and possibly game rules, and a level editor that allows rapid building and playtesting of open 3D worlds.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>From an “is-a” to a “has-a” Object Model</title>
+      <link>https://halogenica.github.io/software/from-an-is-a-to-a-has-a-object-model/</link>
+      <pubDate>Fri, 22 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/software/from-an-is-a-to-a-has-a-object-model/</guid>
+      <description>&lt;p&gt;When evolving my rough particle system into a (very targeted) game engine, I started to learn why object oriented design has gone out of favor for many game engines. From a design standpoint, the particle system was a learning project where I tried to leverage C++ inheritance as much as I could. For the game engine, I attempted to model my game objects using an inheritance structure as well. I felt that in the real world, nearly everything falls into some sort of classification, often with distinct parent-child relationships. However, as I began adding game specific objects to my engine, I realized that not only is it prohibitively difficult to try to model the real world (the way I felt it should be modeled) due to the sheer volume and complexity, but game objects are simply an approximation of real world occurrences, and as such they tend to &amp;ldquo;cheat&amp;rdquo; to achieve a certain effect. Objects in a game can choose to be invisible, or defy the laws of physics. This basically breaks whatever elegant classification structure I had planned. Luckily, this can be addressed by converting from an &amp;ldquo;is-a&amp;rdquo; model (where an Object &amp;ldquo;is a&amp;rdquo; physics-based object) to a &amp;ldquo;has-a&amp;rdquo; model, (where an object &amp;ldquo;has a&amp;rdquo; physics component). In this model, objects will contain pointers to optional collections of data and functionality.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

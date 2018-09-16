@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on Halogenica</title>
+    <link>https://halogenica.github.io/tags/hardware/</link>
+    <description>Recent content in Hardware on Halogenica</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
+    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <lastBuildDate>Sat, 08 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://halogenica.github.io/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monitor Overclock</title>
+      <link>https://halogenica.github.io/hardware/monitor-overclock/</link>
+      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/monitor-overclock/</guid>
+      <description>&lt;p&gt;In late 2012 I decided to try out an imported Korean Yamakasi 27&amp;rdquo;; 2560x1440 IPS display. These have become particularly popular because of the high quality panels (the same as the Dell and Apple high-end monitors) at less than half the price, with some early models capable of overclocking to 120Hz. I decided the benefits outweighed the risks of spending so much money on a monitor with essentially no warranty. The panel was excellent, with no backlight bleed, excellent color, no dead pixels, and good response time. Unfortunately after 1 year the DVI board fried, and I ended up with similar problems to the one below:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gameboy Backlight</title>
+      <link>https://halogenica.github.io/hardware/gameboy-backlight/</link>
+      <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/gameboy-backlight/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Chiptune&amp;rdquo; is a term used to describe music created using specifically limited hardware, usually for classic computer equipment like the Gameboy, the C64, etc. I&amp;rsquo;ve always found chiptune music interesting, and wanted to try my hand at making some with an original gameboy and LSDJ. Since I wanted to play around with it before bed, I decided to install a backlight in my gameboy, from &lt;a href=&#34;http://store.kitsch-bent.com/&#34;&gt;KitschBent&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MIDI Controller</title>
+      <link>https://halogenica.github.io/hardware/midi-controller/</link>
+      <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/midi-controller/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been interested in making some nice electronic music and sound effects for my games. I tend to find the UI of different VSTs frustrating, so I was interested in getting a MIDI controller that could help speed things up. I&amp;rsquo;m also interested in the possibilities of rigging the MIDI knobs to variables in the code so I could tweak different parameters in real time. Like any good (over-)engineer, I researched what it might take to put one together myself. For whatever reason I find this sort of controller hardware fascinating.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mini Server</title>
+      <link>https://halogenica.github.io/hardware/mini-server/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/mini-server/</guid>
+      <description>&lt;p&gt;This is an old server build when mini desktops were pretty rare (Shuttle was the most popular solution at the time). I wanted to build a small, efficient, always-on server. The system could be used as a home theater PC, act as a backup server, host public and sandbox websites, code repositories and many other things. With the price of storage dropping and some impressive mini-itx motherboard options out there, the perfect storm of hardware pushed me to build a mini-server.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Remote Controlled Turret</title>
+      <link>https://halogenica.github.io/hardware/remote-controlled-turret/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hardware/remote-controlled-turret/</guid>
+      <description>&lt;p&gt;A pneumatic nerf turret, controllable via a flash interface over the internet. It holds six shots, has a webcam for aiming, LEDs for use in the dark, an approximate range of 20 feet, with hundreds of shots between tank refills.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

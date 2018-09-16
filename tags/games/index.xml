@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Games on Halogenica</title>
+    <link>https://halogenica.github.io/tags/games/</link>
+    <description>Recent content in Games on Halogenica</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
+    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <lastBuildDate>Wed, 14 Jan 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://halogenica.github.io/tags/games/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fez Viewer</title>
+      <link>https://halogenica.github.io/tools/fez-viewer/</link>
+      <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/tools/fez-viewer/</guid>
+      <description>&lt;p&gt;Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better view of the game, I was looking for a way to visualize the levels.&lt;/p&gt;
+
+&lt;video loop autoplay src=&#34;https://halogenica.github.io/img/tools/fez-viewer/fox.mp4&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cull Shot</title>
+      <link>https://halogenica.github.io/games/cull-shot/</link>
+      <pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/cull-shot/</guid>
+      <description>&lt;p&gt;Cull Shot is a single player time attack shooter. It was created for Ludum Dare 29, with the theme &amp;ldquo;Beneath the Surface&amp;rdquo;. The player holds a button to charge up a &amp;ldquo;cull shot&amp;rdquo;; the longer you hold the button the further the shot is fired. The shot reveals red cubes underneath a diagonal landscape. Pressing another button will capture these cubes, each cube extending the time limit. The objective is simply to last as long as possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Aggrogate</title>
+      <link>https://halogenica.github.io/games/aggrogate/</link>
+      <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/aggrogate/</guid>
+      <description>&lt;p&gt;Aggrogate is a 2 player action puzzle game. Each player plays on half the screen, and controls light and dark cubes of a specific color range (light/dark purple or light/dark green). Each player can &amp;ldquo;shoot&amp;rdquo; either a light or dark cube of their own color into a spot adjacent to any existing cube. By connecting 4 or more cubes of the same color (all dark green, or light purple, etc.) then those connected cubes disappear. The first person to clear all the cubes in their color range wins. The players each have a different viewport of the same collection of cubes, and by &amp;ldquo;shooting&amp;rdquo; a cube they cause the collection of cubes to spin; for both themselves and their opponent.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Zero Zen</title>
+      <link>https://halogenica.github.io/games/zero-zen/</link>
+      <pubDate>Mon, 29 Apr 2013 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/zero-zen/</guid>
+      <description>&lt;p&gt;Zero Zen is a 2-4 player game, most easily described as &amp;ldquo;sumo wrestling with airplanes&amp;rdquo;. Each player controls a plane with left/right rotation, a thruster to move forward, and a &amp;ldquo;shoot&amp;rdquo; button which fires a shotgun blast with tremendous kickback. The flying physics works similar to Asteroids, where your ship will continue coasting after accelerating. The bullets don&amp;rsquo;t do any damage, they just push players around. The objective is to knock all opponents into the outer walls to be the last person standing.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Serendipity with Cubes</title>
+      <link>https://halogenica.github.io/games/serendipity-with-cubes/</link>
+      <pubDate>Mon, 23 Apr 2012 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/games/serendipity-with-cubes/</guid>
+      <description>&lt;p&gt;Serendipity with Cubes is a relaxing, solitary puzzle game. The objective is to connect a &amp;ldquo;path&amp;rdquo; of like colors between the two pulsing cubes. Click on one cube to select it and any adjacent cube to swap their colors. A &amp;ldquo;path&amp;rdquo; is comprised of all adjacent cubes of the same color. Once a path is created between the pulsing cubes, all cubes in that path are cleared from the puzzle. Win the game by clearing all cubes from the puzzle. It is possible to lose the game if cubes are cleared such that there are some cubes that can no longer be connected to any other cubes, or if there is only a single cube remaining of a specific color.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cuda on Halogenica</title>
+    <link>https://halogenica.github.io/tags/cuda/</link>
+    <description>Recent content in Cuda on Halogenica</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
+    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <lastBuildDate>Wed, 15 Dec 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://halogenica.github.io/tags/cuda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CUDA Design Rule Checking</title>
+      <link>https://halogenica.github.io/tools/cuda-design-rule-checking/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/tools/cuda-design-rule-checking/</guid>
+      <description>&lt;p&gt;Design Rule Checking (DRC) of semiconductor layouts is a massively independently parallel problem, and well suited for CUDA. As part of an Independent Study, my friend Jeremy Espenshade and I implemented DRC algorithms using CUDA and achieved approximately 25-30x speedup of the checking algorithm on a Tesla card from 2009.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Volume Rendering using GPGPU</title>
+      <link>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</link>
+      <pubDate>Mon, 15 Jun 2009 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</guid>
+      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; an embarrassingly parallel algorithm also commonly used in ray tracing. There has been growing interest in performing general purpose computations on graphics processing units (GPGPU), which are capable exploiting parallel applications and yielding far greater performance than sequential implementations on CPUs. Modern GPUs allow for rapid acceleration of volume rendering applications, offering affordable high performance visualization systems.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

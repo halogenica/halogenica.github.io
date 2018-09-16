@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Directx on Halogenica</title>
+    <link>https://halogenica.github.io/tags/directx/</link>
+    <description>Recent content in Directx on Halogenica</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
+    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <lastBuildDate>Thu, 13 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://halogenica.github.io/tags/directx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sharing Resources Between DirectX and OpenGL</title>
+      <link>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</guid>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;https://halogenica.github.io/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. There are a number of reasons why this is useful, particularly in tools where you may wish to compare multiple rendering engines simultaneously. With this technique it is also possible to efficiently perform some rendering operations on one API to a render target, and switch to the other API to continue rendering to that render target. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to textures and render targets in graphics memory regardless of API has the potential of efficiently pipelining surfaces through multiple discrete renderers.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://halogenica.github.io/bin/graphics/sharing-resources-between-directx-and-opengl/WGL_NV_DX_interop_demo.zip&#34;&gt;WGL_NV_DX_interop_demo.zip&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ray Casting and Picking Using Bullet Physics</title>
+      <link>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</link>
+      <pubDate>Mon, 13 Feb 2012 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</guid>
+      <description>&lt;p&gt;I just recently got picking working using the Bullet Physics Engine. Picking is a way to &amp;ldquo;pick&amp;rdquo; an object via a primitive (triangle) using a cursor from the camera&amp;rsquo;s perspective. Hovering your mouse cursor over an object and clicking on it is obviously a very intuitive way to interact with a scene. However, it&amp;rsquo;s not as intuitive to program, because the location selected is in 2D screen coordinates, and not 3D world coordinates. The difficulty in picking really lies in somehow determining the 3D coordinate space of the object to select. First, lets see what I&amp;rsquo;m talking about.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/T1ZK3WE4FrQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/1XUKusacGro&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Particle System</title>
+      <link>https://halogenica.github.io/graphics/particle-system/</link>
+      <pubDate>Wed, 22 Dec 2010 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/graphics/particle-system/</guid>
+      <description>&lt;p&gt;I saw a video online recently of several cubes flying into the scene and stacking up to form a larger cube. I thought it was a pretty simple yet powerful effect. The effect was achieved using Particle Flow, so the movement of the particles are entirely animated and not in real time. After seeing this, I immediately wanted to try it, but with a more general solution. So, off I went to write a physics system for my particle engine.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/PXYOYEgjDXQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

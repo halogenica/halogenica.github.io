@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Scriptable Asset Loading</title>
+  <meta property="og:title" content="Scriptable Asset Loading" />
+  <meta name="twitter:title" content="Scriptable Asset Loading" />
+  <meta name="description" content="In the last few months, I&rsquo;ve been spending a considerable amount of time fleshing out some tedious but necessary parts of my game. I realized that since I&rsquo;m a one-man army, I need the ability to very quickly get all of my ideas out and into a playable form without a lot of process and layers of tools. Unfortunately, the only way to achieve a very seamless workflow is by specializing your tools, which means rolling my own level editor and game formats. These things are nice to have anyway, but I believe that the time I invest in these tools will pay off in even the very first game I make with them. I decided I needed a quick and easy way to import models and other game assets, a scripting language (I chose Lua) for data definition and eventually scripted events and possibly game rules, and a level editor that allows rapid building and playtesting of open 3D worlds.
+
+">
+  <meta property="og:description" content="In the last few months, I&rsquo;ve been spending a considerable amount of time fleshing out some tedious but necessary parts of my game. I realized that since I&rsquo;m a one-man army, I need the ability to very quickly get all of my ideas out and into a playable form without a lot of process and layers of tools. Unfortunately, the only way to achieve a very seamless workflow is by specializing your tools, which means rolling my own level editor and game formats. These things are nice to have anyway, but I believe that the time I invest in these tools will pay off in even the very first game I make with them. I decided I needed a quick and easy way to import models and other game assets, a scripting language (I chose Lua) for data definition and eventually scripted events and possibly game rules, and a level editor that allows rapid building and playtesting of open 3D worlds.
+
+">
+  <meta name="twitter:description" content="In the last few months, I&rsquo;ve been spending a considerable amount of time fleshing out some tedious but necessary parts of my game. I realized that since I&rsquo;m a one-man army, I need the …">
+  <meta name="author" content="Michael Romero"/>
+  <link href='https://halogenica.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@halogenica" />
+  <meta name="twitter:creator" content="@halogenica" />
+  <meta property="og:url" content="https://halogenica.github.io/software/scriptable-asset-loading/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Halogenica" />
+
+  <meta name="generator" content="Hugo 0.48" />
+  <link rel="canonical" href="https://halogenica.github.io/software/scriptable-asset-loading/" />
+  <link rel="alternate" href="https://halogenica.github.io/index.xml" type="application/rss+xml" title="Halogenica">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://halogenica.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://halogenica.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://halogenica.github.io/css/codeblock.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://halogenica.github.io">Halogenica</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Games" href="/games/">Games</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Graphics" href="/graphics/">Graphics</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tools" href="/tools/">Tools</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Software" href="/software/">Software</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Hardware" href="/hardware/">Hardware</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Scriptable Asset Loading</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 11, 2011
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>In the last few months, I&rsquo;ve been spending a considerable amount of time fleshing out some tedious but necessary parts of my game. I realized that since I&rsquo;m a one-man army, I need the ability to very quickly get all of my ideas out and into a playable form without a lot of process and layers of tools. Unfortunately, the only way to achieve a very seamless workflow is by specializing your tools, which means rolling my own level editor and game formats. These things are nice to have anyway, but I believe that the time I invest in these tools will pay off in even the very first game I make with them. I decided I needed a quick and easy way to import models and other game assets, a scripting language (I chose Lua) for data definition and eventually scripted events and possibly game rules, and a level editor that allows rapid building and playtesting of open 3D worlds.</p>
+
+<p></p>
+
+<p>I have a few requirements for my tools, as well as any third party tools that I use. They need to have an nonrestrictive license that allows me to use them without royalties when I attempt to release my game. In addition, the license cannot be parasitic, so that by using the software I will not be forced to release my source code (I&rsquo;ll keep everything open source that I can). I am happy to document my process on this blog, and I include all the difficult/valuable code gems to help others in their endeavors; I just don&rsquo;t yet want the responsibility of maintaining a reliable and active open source project. The tools will need to be cross platform (Windows, Mac OS X and Linux), since I&rsquo;m a big fan of cross platform code, and I would like to prove to myself that it&rsquo;s not prohibitive to produce quality cross-platform software. I&rsquo;m also not a fanboy of any particular platform and have a love-hate relationship with basically all technology.</p>
+
+<h3 id="asset-importer">Asset Importer</h3>
+
+<p>For starters, I needed an asset importer. I have very basic requirements for my geometry, likely without even the need for texture coordinates, let alone more complicated materials. However, Because I&rsquo;m using Bullet physics, and I&rsquo;ve elected to use Blender as my modeling software, I would also like a format that stores Blender physics data. As far as I know, the only real standard format that stores this information is COLLADA, which has become a rather common intermediary format for development, however is not suitable for a production game due to the size of the files, the speed of the importers and the large amounts of unnecessary data. I&rsquo;ve also found that a simple model loader that supports a number of formats including COLLADA is more rare than it should be. In my search, I discovered a tool called the Open Asset Import Library, or <a href="http://www.assimp.org/">Assimp</a> for short. This tool has been working out great so far. I created an Asset type in my engine with necessary hooks to add an asset just like any other geometric primitive I have defined by specifying a filename and a position on the screen (with options for scale, etc). The code to load an asset of any given type along with the code to parse the geometry into a list of vertices and faces for my own format definition is very straightforward:</p>
+<div class="highlight"><pre class="chroma">m_pAiScene = m_pAiImporter-&gt;ReadFile(
+        filename,
+        aiProcess_CalcTangentSpace      |
+        aiProcess_Triangulate           |
+        aiProcess_JoinIdenticalVertices |
+        aiProcess_SortByPType          
+        //aiProcess_MakeLeftHanded            // Left-handed coords required by DX
+        );
+
+    if (m_pAiScene)
+    {
+        m_pVertices = reinterpret_cast&lt;Vertex*&gt;(malloc(m_pAiScene-&gt;mMeshes[0]-&gt;mNumVertices * sizeof(Vertex)));
+        m_pIndices = reinterpret_cast&lt;short*&gt;(malloc(m_pAiScene-&gt;mMeshes[0]-&gt;mNumFaces * m_pAiScene-&gt;mMeshes[0]-&gt;mFaces[0].mNumIndices * sizeof(short)));
+
+        for (UINT i = 0; i &lt; m_pAiScene-&gt;mMeshes[0]-&gt;mNumVertices; i++)
+        {
+            Vertex vertex = {
+                {
+                    m_pAiScene-&gt;mMeshes[0]-&gt;mVertices[i].x,
+                    m_pAiScene-&gt;mMeshes[0]-&gt;mVertices[i].y,
+                    m_pAiScene-&gt;mMeshes[0]-&gt;mVertices[i].z
+                },
+                WHITE
+            };
+            m_pVertices[i] = vertex;
+        }
+
+        for (UINT i = 0; i &lt; m_pAiScene-&gt;mMeshes[0]-&gt;mNumFaces; i++)
+        {
+            for (UINT j = 0; j &lt; m_pAiScene-&gt;mMeshes[0]-&gt;mFaces[0].mNumIndices; j++)
+            {
+                short index = m_pAiScene-&gt;mMeshes[0]-&gt;mFaces[i].mIndices[j];
+                m_pIndices[i*m_pAiScene-&gt;mMeshes[0]-&gt;mFaces[0].mNumIndices + j] = index;
+            }
+        }
+    }</pre></div>
+<h3 id="lua-scripting">Lua Scripting</h3>
+
+<p>With the ability to import any model I wanted, I wanted to clean up my main.cpp which had simply become a file for defining the objects in my scene. I decided I wanted to have scripting support that at the very least supported data definition. Essentially, my game engine would load whatever assets and game objects the script requested, and proceeded to simulate &ldquo;the game&rdquo; by following a set of rules that are currently hardcoded into the engine. After a bit of research I decided upon Lua as my scripting language. Lua is fast, &lsquo;easily&rsquo; embeddable into C++, and has higher level language conveniences that allow for quicker scripted events. Thankfully, since I&rsquo;m a programmer, I don&rsquo;t need something that&rsquo;s strictly &ldquo;human readable&rdquo;, I just want something that is interpreted to prevent recompiles when changing objects in a scene, and reduces the amount of typing I have to do. I&rsquo;ve also read about a great deal of success that other indie and major game studios have had with Lua as a scripting language, and since I&rsquo;ve used it successfully in other projects I felt comfortable with the choice.</p>
+
+<p>Meshing Lua with C++ however, was not as easy as I had hoped. I went through a number of different wrappers that claimed to make Lua binding easy. Simple Lua Binder aka <a href="http://code.google.com/p/slb/">SLB</a> was my first choice, until I realized the limited support for wrapping C++ classes. And although it made calling from Lua into C++ very simple, calling from C++ into Lua was not made any easier by the tool. There was also the issue of support; it seemed like the project, while currently actively maintained, only has involvement from a single contributor which leaves it a rather fragile platform to build upon. After being scared away from SLB, I investigated <a href="https://github.com/luabind/luabind">Luabind</a>, <a href="https://github.com/LuaDist/toluapp">ToLua++</a>, and <a href="http://www.swig.org/">SWIG</a>. Luabind seems to be a very commonly used binding library, but it also seemed overkill for the basic data definition I wanted to do at the time. ToLua++ seemed like a good option, however I couldn&rsquo;t seem to get it compiled and linking well on my windows machine, so without wasting too much time, I decided to drop it and try another solution. SWIG is interesting because it utilizes a pre-build step that simply outputs the native C/C++ code for binding to any particular language. The only changes that need to be made to generate bindings for various languages are configuration file changes. If I wanted to switch from Lua to Python, or even Ruby later I could do so with minimal effort. The downside is the overhead of an additional pre-build step. I wrote an API header that defines all C++ functions I wish to be visible to Lua, which is the only dependency the SWIG manifest file has. The other downside however is that SWIG still seemed to have poor support for calling from C++ into Lua (as it appears is typical among the binding solutions). Currently I have SWIG implemented and can load a camera, player, and all content into a scene using a Lua script.</p>
+
+<p>The manifest file describes the binding code for SWIG to generate:</p>
+<div class="highlight"><pre class="chroma">// lua_bindings.cpp is autogenerated from this file
+
+%module game
+%{
+#include &#34;API.h&#34;
+%}
+%include &#34;API.h&#34;</pre></div>
+<p>The API.h file declares the functions that will be made accessible to Lua:</p>
+<div class="highlight"><pre class="chroma">void SetPlayer(float x, float y, float z, float scale, float r, float g, float b, float a);
+void SetCamera(float rotX, float rotY, float radius);
+void AddEnemy(int numParticles, float x, float y, float z, float scale, float r, float g, float b, float a);
+void AddAsset(const char* filename, float x, float y, float z);</pre></div>
+<p>This Lua script is used to define the scene:</p>
+<div class="highlight"><pre class="chroma">game.SetPlayer(0, 0, -20, 3, 1, 1, 1, 1)
+
+game.SetCamera(0, 3.14159265358979323/2, 100)
+
+game.AddAsset(&#34;resources/ground.obj&#34;, 0, -36, 0)
+
+game.AddEnemy(64, -50.0, 30.0, 12.0, 1.8, 0.4588235, 0.9058823, 0.1882352, 1);
+game.AddEnemy(64, 50.0, 30.0, 12.0, 1.8, 0.2, 0.6588235, 0.8980392, 1);
+game.AddEnemy(64, -50.0, -30.0, 12.0, 1.8, 0.2, 0.6588235, 0.8980392, 1);
+game.AddEnemy(64, 50.0, -30.0, 12.0, 1.8, 0.4588235, 0.9058823, 0.1882352, 1);
+game.AddEnemy(729, 0, 0, 12, 1.8, 0.9764705, 0.1490196, 0.4470588, 1)</pre></div>
+<p>Finally, the Lua script is invoked in C++ by:</p>
+<div class="highlight"><pre class="chroma">    lua_State* L;
+    L=lua_open();
+    //luaopen_base(L);  // load basic libs (eg. print)
+    luaL_openlibs(L);
+    luaopen_game(L);    // load the wrappered module
+
+    if (luaL_loadfile(L,&#34;.\\scripts\\scene.lua&#34;)==0) // load and run the file
+    {
+        printf(&#34;loaded .\\scripts\\scene.lua&#34;);
+        lua_pcall(L,0,0,0);
+    }
+    else
+    {
+        printf(&#34;unable to load .\\scripts\\scene.lua&#34;);
+    }
+
+    lua_close(L);</pre></div>
+<p>However I&rsquo;ve recently been reading <a href="https://smile.amazon.com/Game-Coding-Complete-Fourth-McShaffry/dp/1133776574">Game Coding Complete</a>, which I very highly recommend. McShaffry suggests <a href="http://luaplus.org/">LuaPlus</a>, an augmentation of core Lua 5.1 which apparently has much better native binding support. While I haven&rsquo;t had the time so far, I plan on evaluating LuaPlus, which could hopefully resolve some of the design issues I feel I may run into with other binding systems that seem to one-sidedly support Lua to C++ calls but not vice versa.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://halogenica.github.io/tags/software/">Software</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/game-engine/">Game Engine</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/tools/">Tools</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/lua/">Lua</a>&nbsp;
+            
+              <a href="https://halogenica.github.io/tags/scripting/">Scripting</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://halogenica.github.io/software/from-an-is-a-to-a-has-a-object-model/" data-toggle="tooltip" data-placement="top" title="From an “is-a” to a “has-a” Object Model">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/" data-toggle="tooltip" data-placement="top" title="Ray Casting and Picking Using Bullet Physics">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mike@halogenica.net" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/halogenica" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/halogenica" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/halogenica" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/halogenica" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/angelkatalyst" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/halogenica" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://halogenica.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Michael Romero
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2015
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://halogenica.github.io">Halogenica</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.48</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/main.js"></script>
+<script src="https://halogenica.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://halogenica.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
