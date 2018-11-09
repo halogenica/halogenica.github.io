@@ -18,19 +18,7 @@
       <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;https://halogenica.github.io/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. There are a number of reasons why this is useful, particularly in tools where you may wish to compare multiple rendering engines simultaneously. With this technique it is also possible to efficiently perform some rendering operations on one API to a render target, and switch to the other API to continue rendering to that render target. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to textures and render targets in graphics memory regardless of API has the potential of efficiently pipelining surfaces through multiple discrete renderers.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://halogenica.github.io/bin/graphics/sharing-resources-between-directx-and-opengl/WGL_NV_DX_interop_demo.zip&#34;&gt;WGL_NV_DX_interop_demo.zip&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. With this technique it is possible to efficiently perform some rendering operations within one API for part of an image, and switch to the other API for another part of the image. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to graphics memory between APIs allows efficient and optimal sharing.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -41,7 +29,7 @@
       <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/signed-distance-fields/</guid>
-      <description>&lt;p&gt;So there is this cool technique that had gained significant popularity in the demoscene called &amp;ldquo;Signed Distance Fields&amp;rdquo;. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. I wanted to play around with some GLSL and thought this would be a really interesting algorithm to take a look at. You can see some of the power of these types of functions in a presentation that smash of fairlight (Matt Swaboda) gave at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Signed Distance Fields, when used in computer graphics, is a way of mathematically defining a scene, which can be both greatly compressed, and scale to any resolution. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. Other powerful examples were presented by smash of fairlight (Matt Swaboda) at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;. This is my first expermientation with this rendering technique.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -69,7 +57,7 @@
       <pubDate>Mon, 15 Jun 2009 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</guid>
-      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; an embarrassingly parallel algorithm also commonly used in ray tracing. There has been growing interest in performing general purpose computations on graphics processing units (GPGPU), which are capable exploiting parallel applications and yielding far greater performance than sequential implementations on CPUs. Modern GPUs allow for rapid acceleration of volume rendering applications, offering affordable high performance visualization systems.&lt;/p&gt;
+      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; similar to ray tracing. Rendering each pixel can be done in parallel, so massively parallel architectures like GPGPU can dramatically speed up rendering.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -92,10 +80,6 @@
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/hypertexturing/</guid>
       <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;
-
-&lt;video loop autoplay autobuffer muted playsinline&gt;
-    &lt;source src=&#34;https://halogenica.github.io/img/graphics/hypertexturing/reflective_hypertexture.mp4&#34;&gt;
-&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

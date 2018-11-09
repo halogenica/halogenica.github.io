@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
     <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
-    <lastBuildDate>Wed, 14 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://halogenica.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unicorn Gundam Bust</title>
+      <link>https://halogenica.github.io/hobby/unicorn-gundam-bust/</link>
+      <pubDate>Mon, 17 Sep 2018 00:00:00 +0000</pubDate>
+      <author>mike@halogenica.net (Michael Romero)</author>
+      <guid>https://halogenica.github.io/hobby/unicorn-gundam-bust/</guid>
+      <description> </description>
+    </item>
     
     <item>
       <title>Fez Viewer</title>
@@ -18,11 +27,7 @@
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/tools/fez-viewer/</guid>
-      <description>&lt;p&gt;Fez is one of my favorite games of all time. I wanted to do a bit of a tribute to the game as a personal project (I was originally hoping to make some papercraft or 3D printing). To help get a better view of the game, I was looking for a way to visualize the levels.&lt;/p&gt;
-
-&lt;video loop autoplay autobuffer muted playsinline&gt;
-    &lt;source src=&#34;https://halogenica.github.io/img/tools/fez-viewer/fox.mp4&#34;&gt;
-&lt;/video&gt;
+      <description>&lt;p&gt;Fez Viewer is a tool that can load the models and levels from Fez, and allow you to freely inspect and fly through them. It currently supports loading individual art objects, animation sets, and even entire levels.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -44,19 +49,7 @@
       <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</guid>
-      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;https://halogenica.github.io/css/hugo-easy-gallery.css&#34; /&gt;
-&lt;div class=&#34;box&#34; &gt;
-  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-    &lt;div class=&#34;img&#34;&gt;
-      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; /&gt;
-    &lt;/div&gt;
-    &lt;a href=&#34;https://halogenica.github.io/img/graphics/sharing-resources-between-directx-and-opengl/Shared_Resources.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. There are a number of reasons why this is useful, particularly in tools where you may wish to compare multiple rendering engines simultaneously. With this technique it is also possible to efficiently perform some rendering operations on one API to a render target, and switch to the other API to continue rendering to that render target. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to textures and render targets in graphics memory regardless of API has the potential of efficiently pipelining surfaces through multiple discrete renderers.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://halogenica.github.io/bin/graphics/sharing-resources-between-directx-and-opengl/WGL_NV_DX_interop_demo.zip&#34;&gt;WGL_NV_DX_interop_demo.zip&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. With this technique it is possible to efficiently perform some rendering operations within one API for part of an image, and switch to the other API for another part of the image. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to graphics memory between APIs allows efficient and optimal sharing.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -78,7 +71,7 @@
       <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/games/aggrogate/</guid>
-      <description>&lt;p&gt;Aggrogate is a 2 player action puzzle game. Each player plays on half the screen, and controls light and dark cubes of a specific color range (light/dark purple or light/dark green). Each player can &amp;ldquo;shoot&amp;rdquo; either a light or dark cube of their own color into a spot adjacent to any existing cube. By connecting 4 or more cubes of the same color (all dark green, or light purple, etc.) then those connected cubes disappear. The first person to clear all the cubes in their color range wins. The players each have a different viewport of the same collection of cubes, and by &amp;ldquo;shooting&amp;rdquo; a cube they cause the collection of cubes to spin; for both themselves and their opponent.&lt;/p&gt;
+      <description>&lt;p&gt;Aggrogate is a 2 player action puzzle game. Each player controls light and dark cubes (light/dark purple or light/dark green). They must match 4 cubes of the same color to clear those cubes. The first play to clear all of their colored cubes wins. The trick is, each player is playing on the same collection of cubes, and shooting it causes it to spin, for both players!&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -122,7 +115,7 @@
       <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/signed-distance-fields/</guid>
-      <description>&lt;p&gt;So there is this cool technique that had gained significant popularity in the demoscene called &amp;ldquo;Signed Distance Fields&amp;rdquo;. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. I wanted to play around with some GLSL and thought this would be a really interesting algorithm to take a look at. You can see some of the power of these types of functions in a presentation that smash of fairlight (Matt Swaboda) gave at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Signed Distance Fields, when used in computer graphics, is a way of mathematically defining a scene, which can be both greatly compressed, and scale to any resolution. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. Other powerful examples were presented by smash of fairlight (Matt Swaboda) at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;. This is my first expermientation with this rendering technique.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -133,7 +126,7 @@
       <pubDate>Mon, 23 Apr 2012 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/games/serendipity-with-cubes/</guid>
-      <description>&lt;p&gt;Serendipity with Cubes is a relaxing, solitary puzzle game. The objective is to connect a &amp;ldquo;path&amp;rdquo; of like colors between the two pulsing cubes. Click on one cube to select it and any adjacent cube to swap their colors. A &amp;ldquo;path&amp;rdquo; is comprised of all adjacent cubes of the same color. Once a path is created between the pulsing cubes, all cubes in that path are cleared from the puzzle. Win the game by clearing all cubes from the puzzle. It is possible to lose the game if cubes are cleared such that there are some cubes that can no longer be connected to any other cubes, or if there is only a single cube remaining of a specific color.&lt;/p&gt;
+      <description>&lt;p&gt;Serendipity with Cubes is a relaxing, solitary puzzle game. The objective is to create a &amp;ldquo;path&amp;rdquo; of same-colored cubes to connect the two pulsing cubes. Click on one cube to select it and any adjacent cube to swap their colors. Once a path is created between the pulsing cubes, all cubes in that path are cleared from the puzzle. Win the game by clearing all cubes from the puzzle. If there is no way to connect enough cubes to complete a path, it&amp;rsquo;s game over.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -145,17 +138,6 @@
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</guid>
       <description>&lt;p&gt;I just recently got picking working using the Bullet Physics Engine. Picking is a way to &amp;ldquo;pick&amp;rdquo; an object via a primitive (triangle) using a cursor from the camera&amp;rsquo;s perspective. Hovering your mouse cursor over an object and clicking on it is obviously a very intuitive way to interact with a scene. However, it&amp;rsquo;s not as intuitive to program, because the location selected is in 2D screen coordinates, and not 3D world coordinates. The difficulty in picking really lies in somehow determining the 3D coordinate space of the object to select. First, lets see what I&amp;rsquo;m talking about.&lt;/p&gt;
-
-&lt;p&gt;
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/T1ZK3WE4FrQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/1XUKusacGro&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -238,7 +220,7 @@
       <pubDate>Mon, 15 Jun 2009 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</guid>
-      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; an embarrassingly parallel algorithm also commonly used in ray tracing. There has been growing interest in performing general purpose computations on graphics processing units (GPGPU), which are capable exploiting parallel applications and yielding far greater performance than sequential implementations on CPUs. Modern GPUs allow for rapid acceleration of volume rendering applications, offering affordable high performance visualization systems.&lt;/p&gt;
+      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; similar to ray tracing. Rendering each pixel can be done in parallel, so massively parallel architectures like GPGPU can dramatically speed up rendering.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -261,10 +243,6 @@
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/hypertexturing/</guid>
       <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;
-
-&lt;video loop autoplay autobuffer muted playsinline&gt;
-    &lt;source src=&#34;https://halogenica.github.io/img/graphics/hypertexturing/reflective_hypertexture.mp4&#34;&gt;
-&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

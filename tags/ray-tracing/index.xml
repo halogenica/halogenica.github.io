@@ -18,7 +18,7 @@
       <pubDate>Mon, 15 Jun 2009 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</guid>
-      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; an embarrassingly parallel algorithm also commonly used in ray tracing. There has been growing interest in performing general purpose computations on graphics processing units (GPGPU), which are capable exploiting parallel applications and yielding far greater performance than sequential implementations on CPUs. Modern GPUs allow for rapid acceleration of volume rendering applications, offering affordable high performance visualization systems.&lt;/p&gt;
+      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; similar to ray tracing. Rendering each pixel can be done in parallel, so massively parallel architectures like GPGPU can dramatically speed up rendering.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -41,10 +41,6 @@
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/hypertexturing/</guid>
       <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;
-
-&lt;video loop autoplay autobuffer muted playsinline&gt;
-    &lt;source src=&#34;https://halogenica.github.io/img/graphics/hypertexturing/reflective_hypertexture.mp4&#34;&gt;
-&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
