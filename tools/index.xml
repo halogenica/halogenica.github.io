@@ -18,9 +18,7 @@
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/tools/fez-viewer/</guid>
-      <description>&lt;p&gt;Fez Viewer is a tool that can load the models and levels from Fez, and allow you to freely inspect and fly through them. It currently supports loading individual art objects, animation sets, and even entire levels.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Fez Viewer is a tool that can load the models and levels from Fez, and allow you to freely inspect and fly through them. It currently supports loading individual art objects, animation sets, and even entire levels.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +27,7 @@
       <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/tools/cuda-design-rule-checking/</guid>
-      <description>&lt;p&gt;Design Rule Checking (DRC) of semiconductor layouts is a massively independently parallel problem, and well suited for CUDA. As part of an Independent Study, my friend Jeremy Espenshade and I implemented DRC algorithms using CUDA and achieved approximately 25-30x speedup of the checking algorithm on a Tesla card from 2009.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Design Rule Checking (DRC) of semiconductor layouts is a massively independently parallel problem, and well suited for CUDA. As part of an Independent Study, my friend Jeremy Espenshade and I implemented DRC algorithms using CUDA and achieved approximately 25-30x speedup of the checking algorithm on a Tesla card from 2009.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -18,9 +18,7 @@
       <pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/games/cull-shot/</guid>
-      <description>&lt;p&gt;Cull Shot is a single player time attack shooter. It was created for Ludum Dare 29, with the theme &amp;ldquo;Beneath the Surface&amp;rdquo;. The player holds a button to charge up a &amp;ldquo;cull shot&amp;rdquo;; the longer you hold the button the further the shot is fired. The shot reveals red cubes underneath a diagonal landscape. Pressing another button will capture these cubes, each cube extending the time limit. The objective is simply to last as long as possible.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Cull Shot is a single player time attack shooter. It was created for Ludum Dare 29, with the theme &amp;ldquo;Beneath the Surface&amp;rdquo;. The player holds a button to charge up a &amp;ldquo;cull shot&amp;rdquo;; the longer you hold the button the further the shot is fired. The shot reveals red cubes underneath a diagonal landscape. Pressing another button will capture these cubes, each cube extending the time limit. The objective is simply to last as long as possible.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +27,7 @@
       <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/games/aggrogate/</guid>
-      <description>&lt;p&gt;Aggrogate is a 2 player action puzzle game. Each player controls light and dark cubes (light/dark purple or light/dark green). They must match 4 cubes of the same color to clear those cubes. The first play to clear all of their colored cubes wins. The trick is, each player is playing on the same collection of cubes, and shooting it causes it to spin, for both players!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Aggrogate is a 2 player action puzzle game. Each player controls light and dark cubes (light/dark purple or light/dark green). They must match 4 cubes of the same color to clear those cubes. The first play to clear all of their colored cubes wins. The trick is, each player is playing on the same collection of cubes, and shooting it causes it to spin, for both players!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,9 +36,7 @@
       <pubDate>Mon, 29 Apr 2013 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/games/zero-zen/</guid>
-      <description>&lt;p&gt;Zero Zen is a 2-4 player game, most easily described as &amp;ldquo;sumo wrestling with airplanes&amp;rdquo;. Each player controls a plane with left/right rotation, a thruster to move forward, and a &amp;ldquo;shoot&amp;rdquo; button which fires a shotgun blast with tremendous kickback. The flying physics works similar to Asteroids, where your ship will continue coasting after accelerating. The bullets don&amp;rsquo;t do any damage, they just push players around. The objective is to knock all opponents into the outer walls to be the last person standing.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Zero Zen is a 2-4 player game, most easily described as &amp;ldquo;sumo wrestling with airplanes&amp;rdquo;. Each player controls a plane with left/right rotation, a thruster to move forward, and a &amp;ldquo;shoot&amp;rdquo; button which fires a shotgun blast with tremendous kickback. The flying physics works similar to Asteroids, where your ship will continue coasting after accelerating. The bullets don&amp;rsquo;t do any damage, they just push players around. The objective is to knock all opponents into the outer walls to be the last person standing.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,9 +45,7 @@
       <pubDate>Mon, 23 Apr 2012 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/games/serendipity-with-cubes/</guid>
-      <description>&lt;p&gt;Serendipity with Cubes is a relaxing, solitary puzzle game. The objective is to create a &amp;ldquo;path&amp;rdquo; of same-colored cubes to connect the two pulsing cubes. Click on one cube to select it and any adjacent cube to swap their colors. Once a path is created between the pulsing cubes, all cubes in that path are cleared from the puzzle. Win the game by clearing all cubes from the puzzle. If there is no way to connect enough cubes to complete a path, it&amp;rsquo;s game over.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Serendipity with Cubes is a relaxing, solitary puzzle game. The objective is to create a &amp;ldquo;path&amp;rdquo; of same-colored cubes to connect the two pulsing cubes. Click on one cube to select it and any adjacent cube to swap their colors. Once a path is created between the pulsing cubes, all cubes in that path are cleared from the puzzle. Win the game by clearing all cubes from the puzzle. If there is no way to connect enough cubes to complete a path, it&amp;rsquo;s game over.&lt;/p&gt;</description>
     </item>
     
   </channel>

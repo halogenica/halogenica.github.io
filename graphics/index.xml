@@ -18,9 +18,7 @@
       <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. With this technique it is possible to efficiently perform some rendering operations within one API for part of an image, and switch to the other API for another part of the image. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to graphics memory between APIs allows efficient and optimal sharing.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently had a need to simultaneously render using both DirectX and OpenGL. With this technique it is possible to efficiently perform some rendering operations within one API for part of an image, and switch to the other API for another part of the image. It can also be used to perform all rendering in a specific API, while presenting that final render target using another API. Providing direct access to graphics memory between APIs allows efficient and optimal sharing.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +27,7 @@
       <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/signed-distance-fields/</guid>
-      <description>&lt;p&gt;Signed Distance Fields, when used in computer graphics, is a way of mathematically defining a scene, which can be both greatly compressed, and scale to any resolution. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. Other powerful examples were presented by smash of fairlight (Matt Swaboda) at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;. This is my first expermientation with this rendering technique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Signed Distance Fields, when used in computer graphics, is a way of mathematically defining a scene, which can be both greatly compressed, and scale to any resolution. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. Other powerful examples were presented by smash of fairlight (Matt Swaboda) at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;. This is my first expermientation with this rendering technique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,11 +40,8 @@
 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/PXYOYEgjDXQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;/p&gt;</description>
+  &lt;iframe src=&#34;https://www.youtube.com/embed/PXYOYEgjDXQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -57,9 +50,7 @@
       <pubDate>Mon, 15 Jun 2009 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/volume-rendering-using-gpgpu/</guid>
-      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; similar to ray tracing. Rendering each pixel can be done in parallel, so massively parallel architectures like GPGPU can dramatically speed up rendering.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; similar to ray tracing. Rendering each pixel can be done in parallel, so massively parallel architectures like GPGPU can dramatically speed up rendering.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,9 +59,7 @@
       <pubDate>Sun, 15 Feb 2009 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/volume-rendering-on-the-psp/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve long been active in PSP development and decided to have some fun with graphics on the PSP. I asked my university to order two PSP dev systems and I got to work porting my ray tracer to the PSP. As a team effort with three other graphics enthusiasts, we decided to accelerate hypertexturing on the PSP using the VFPU. We ended up with a ray tracer, hypertexturer, and volume ray caster working on the PSP capable of displaying a 64x64x64 voxel volume.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve long been active in PSP development and decided to have some fun with graphics on the PSP. I asked my university to order two PSP dev systems and I got to work porting my ray tracer to the PSP. As a team effort with three other graphics enthusiasts, we decided to accelerate hypertexturing on the PSP using the VFPU. We ended up with a ray tracer, hypertexturer, and volume ray caster working on the PSP capable of displaying a 64x64x64 voxel volume.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,9 +68,7 @@
       <pubDate>Mon, 19 Jan 2009 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/hypertexturing/</guid>
-      <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -90,9 +77,7 @@
       <pubDate>Mon, 15 Dec 2008 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/ray-tracer/</guid>
-      <description>&lt;p&gt;This was my first ray tracer, implemented on the CPU using OpenGL and &lt;a href=&#34;http://www.opengl.org/resources/libraries/glut/&#34;&gt;GLUT&lt;/a&gt; to present to the screen, and coded in &lt;a href=&#34;http://www.bloodshed.net/devcpp.html&#34;&gt;Dev-C++&lt;/a&gt;. It is largely inspired by the ray tracer used in the book &lt;a href=&#34;http://www.raytracegroundup.com/&#34;&gt;Ray Tracing from the Ground Up&lt;/a&gt;, an excellent and highly recommended book on ray tracing by Kevin Suffern.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This was my first ray tracer, implemented on the CPU using OpenGL and &lt;a href=&#34;http://www.opengl.org/resources/libraries/glut/&#34;&gt;GLUT&lt;/a&gt; to present to the screen, and coded in &lt;a href=&#34;http://www.bloodshed.net/devcpp.html&#34;&gt;Dev-C++&lt;/a&gt;. It is largely inspired by the ray tracer used in the book &lt;a href=&#34;http://www.raytracegroundup.com/&#34;&gt;Ray Tracing from the Ground Up&lt;/a&gt;, an excellent and highly recommended book on ray tracing by Kevin Suffern.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -101,9 +86,7 @@
       <pubDate>Fri, 14 Dec 2007 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/graphics/first-graphics-project/</guid>
-      <description>&lt;p&gt;My very first graphics project. It&amp;rsquo;s written in C, and uses old fixed-function &lt;a href=&#34;http://www.opengl.org/&#34;&gt;OpenGL&lt;/a&gt; and &lt;a href=&#34;http://www.opengl.org/resources/libraries/glut/&#34;&gt;GLUT&lt;/a&gt;. The code is pretty sloppy as most first attempts go. There are a few interactive elements to this project, with the box spreading apart and interesting use of blending. As the transparent surfaces occlude other geometry, the geometry &amp;ldquo;disappears&amp;rdquo; and shapes are revealed inside the formerly opaque geometry.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;My very first graphics project. It&amp;rsquo;s written in C, and uses old fixed-function &lt;a href=&#34;http://www.opengl.org/&#34;&gt;OpenGL&lt;/a&gt; and &lt;a href=&#34;http://www.opengl.org/resources/libraries/glut/&#34;&gt;GLUT&lt;/a&gt;. The code is pretty sloppy as most first attempts go. There are a few interactive elements to this project, with the box spreading apart and interesting use of blending. As the transparent surfaces occlude other geometry, the geometry &amp;ldquo;disappears&amp;rdquo; and shapes are revealed inside the formerly opaque geometry.&lt;/p&gt;</description>
     </item>
     
   </channel>

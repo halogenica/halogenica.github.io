@@ -3,7 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://halogenica.github.io/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/cinder/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://halogenica.github.io/tools/fez-viewer/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/games/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/graphics/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/opengl/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/tools/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tools/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,8 +54,38 @@
   </url>
   
   <url>
+    <loc>https://halogenica.github.io/tags/game-jam/</loc>
+    <lastmod>2014-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/games/</loc>
+    <lastmod>2014-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/directx/</loc>
+    <lastmod>2014-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/graphics/</loc>
+    <lastmod>2014-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://halogenica.github.io/graphics/sharing-resources-between-directx-and-opengl/</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/hardware/</loc>
+    <lastmod>2014-03-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/hardware/</loc>
+    <lastmod>2014-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,8 +109,28 @@
   </url>
   
   <url>
+    <loc>https://halogenica.github.io/tags/music/</loc>
+    <lastmod>2013-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/controller/</loc>
+    <lastmod>2013-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/microcontroller/</loc>
+    <lastmod>2013-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://halogenica.github.io/hardware/midi-controller/</loc>
     <lastmod>2013-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/shaders/</loc>
+    <lastmod>2012-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -53,12 +144,42 @@
   </url>
   
   <url>
+    <loc>https://halogenica.github.io/tags/game-engine/</loc>
+    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/physics/</loc>
+    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://halogenica.github.io/software/ray-casting-and-picking-using-bullet-physics/</loc>
     <lastmod>2012-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://halogenica.github.io/tags/software/</loc>
+    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/software/</loc>
+    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/lua/</loc>
+    <lastmod>2011-07-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://halogenica.github.io/software/scriptable-asset-loading/</loc>
+    <lastmod>2011-07-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/scripting/</loc>
     <lastmod>2011-07-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -70,6 +191,11 @@
   <url>
     <loc>https://halogenica.github.io/graphics/particle-system/</loc>
     <lastmod>2010-12-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/cuda/</loc>
+    <lastmod>2010-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -85,6 +211,11 @@
   <url>
     <loc>https://halogenica.github.io/hardware/remote-controlled-turret/</loc>
     <lastmod>2010-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.github.io/tags/ray-tracing/</loc>
+    <lastmod>2009-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -113,86 +244,11 @@
   </url>
   
   <url>
-    <loc>https://halogenica.github.io/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://halogenica.github.io/about/</loc>
   </url>
   
   <url>
     <loc>https://halogenica.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/cinder/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/controller/</loc>
-    <lastmod>2013-01-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/cuda/</loc>
-    <lastmod>2010-12-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/directx/</loc>
-    <lastmod>2014-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/game-engine/</loc>
-    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/game-jam/</loc>
-    <lastmod>2014-04-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/games/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/games/</loc>
-    <lastmod>2014-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/graphics/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/graphics/</loc>
-    <lastmod>2014-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/hardware/</loc>
-    <lastmod>2014-03-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/hardware/</loc>
-    <lastmod>2014-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -200,83 +256,7 @@
   </url>
   
   <url>
-    <loc>https://halogenica.github.io/tags/lua/</loc>
-    <lastmod>2011-07-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/microcontroller/</loc>
-    <lastmod>2013-01-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/music/</loc>
-    <lastmod>2013-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/opengl/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/physics/</loc>
-    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://halogenica.github.io/post/</loc>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/ray-tracing/</loc>
-    <lastmod>2009-06-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/scripting/</loc>
-    <lastmod>2011-07-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/shaders/</loc>
-    <lastmod>2012-11-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/software/</loc>
-    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/software/</loc>
-    <lastmod>2012-02-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tags/tools/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://halogenica.github.io/tools/</loc>
-    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

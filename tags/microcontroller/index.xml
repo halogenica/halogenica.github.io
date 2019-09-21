@@ -18,9 +18,7 @@
       <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/hardware/midi-controller/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been interested in making some nice electronic music and sound effects for my games. I tend to find the UI of different VSTs frustrating, so I was interested in getting a MIDI controller that could help speed things up. I&amp;rsquo;m also interested in the possibilities of rigging the MIDI knobs to variables in the code so I could tweak different parameters in real time. Like any good (over-)engineer, I researched what it might take to put one together myself. For whatever reason I find this sort of controller hardware fascinating.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve been interested in making some nice electronic music and sound effects for my games. I tend to find the UI of different VSTs frustrating, so I was interested in getting a MIDI controller that could help speed things up. I&amp;rsquo;m also interested in the possibilities of rigging the MIDI knobs to variables in the code so I could tweak different parameters in real time. Like any good (over-)engineer, I researched what it might take to put one together myself. For whatever reason I find this sort of controller hardware fascinating.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +27,7 @@
       <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
       <guid>https://halogenica.github.io/hardware/remote-controlled-turret/</guid>
-      <description>&lt;p&gt;A pneumatic nerf turret, controllable via a flash interface over the internet. It holds six shots, has a webcam for aiming, LEDs for use in the dark, an approximate range of 20 feet, with hundreds of shots between tank refills.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;A pneumatic nerf turret, controllable via a flash interface over the internet. It holds six shots, has a webcam for aiming, LEDs for use in the dark, an approximate range of 20 feet, with hundreds of shots between tank refills.&lt;/p&gt;</description>
     </item>
     
   </channel>
