@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hobby on Halogenica</title>
-    <link>https://halogenica.github.io/hobby/</link>
+    <link>https://romero.dev/hobby/</link>
     <description>Recent content in Hobby on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
     <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
     
-	<atom:link href="https://halogenica.github.io/hobby/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://romero.dev/hobby/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

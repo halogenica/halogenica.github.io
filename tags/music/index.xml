@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Music on Halogenica</title>
-    <link>https://halogenica.github.io/tags/music/</link>
+    <link>https://romero.dev/tags/music/</link>
     <description>Recent content in Music on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
     <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
     <lastBuildDate>Sun, 17 Feb 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://halogenica.github.io/tags/music/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://romero.dev/tags/music/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gameboy Backlight</title>
-      <link>https://halogenica.github.io/hardware/gameboy-backlight/</link>
+      <link>https://romero.dev/hardware/gameboy-backlight/</link>
       <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://halogenica.github.io/hardware/gameboy-backlight/</guid>
+      <guid>https://romero.dev/hardware/gameboy-backlight/</guid>
       <description>&lt;p&gt;&amp;ldquo;Chiptune&amp;rdquo; is a term used to describe music created using specifically limited hardware, usually for classic computer equipment like the Gameboy, the C64, etc. I&amp;rsquo;ve always found chiptune music interesting, and wanted to try my hand at making some with an original gameboy and LSDJ. Since I wanted to play around with it before bed, I decided to install a backlight in my gameboy, from &lt;a href=&#34;http://store.kitsch-bent.com/&#34;&gt;KitschBent&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MIDI Controller</title>
-      <link>https://halogenica.github.io/hardware/midi-controller/</link>
+      <link>https://romero.dev/hardware/midi-controller/</link>
       <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://halogenica.github.io/hardware/midi-controller/</guid>
+      <guid>https://romero.dev/hardware/midi-controller/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been interested in making some nice electronic music and sound effects for my games. I tend to find the UI of different VSTs frustrating, so I was interested in getting a MIDI controller that could help speed things up. I&amp;rsquo;m also interested in the possibilities of rigging the MIDI knobs to variables in the code so I could tweak different parameters in real time. Like any good (over-)engineer, I researched what it might take to put one together myself. For whatever reason I find this sort of controller hardware fascinating.&lt;/p&gt;</description>
     </item>
     

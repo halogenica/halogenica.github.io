@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripting on Halogenica</title>
-    <link>https://halogenica.github.io/tags/scripting/</link>
+    <link>https://romero.dev/tags/scripting/</link>
     <description>Recent content in Scripting on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
     <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
     <lastBuildDate>Mon, 11 Jul 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://halogenica.github.io/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://romero.dev/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scriptable Asset Loading</title>
-      <link>https://halogenica.github.io/software/scriptable-asset-loading/</link>
+      <link>https://romero.dev/software/scriptable-asset-loading/</link>
       <pubDate>Mon, 11 Jul 2011 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://halogenica.github.io/software/scriptable-asset-loading/</guid>
+      <guid>https://romero.dev/software/scriptable-asset-loading/</guid>
       <description>&lt;p&gt;In the last few months, I&amp;rsquo;ve been spending a considerable amount of time fleshing out some tedious but necessary parts of my game. I realized that since I&amp;rsquo;m a one-man army, I need the ability to very quickly get all of my ideas out and into a playable form without a lot of process and layers of tools. Unfortunately, the only way to achieve a very seamless workflow is by specializing your tools, which means rolling my own level editor and game formats. These things are nice to have anyway, but I believe that the time I invest in these tools will pay off in even the very first game I make with them. I decided I needed a quick and easy way to import models and other game assets, a scripting language (I chose Lua) for data definition and eventually scripted events and possibly game rules, and a level editor that allows rapid building and playtesting of open 3D worlds.&lt;/p&gt;</description>
     </item>
     

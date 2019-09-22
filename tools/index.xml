@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Halogenica</title>
-    <link>https://halogenica.github.io/tools/</link>
+    <link>https://romero.dev/tools/</link>
     <description>Recent content in Tools on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
     <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
     <lastBuildDate>Wed, 14 Jan 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://halogenica.github.io/tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://romero.dev/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fez Viewer</title>
-      <link>https://halogenica.github.io/tools/fez-viewer/</link>
+      <link>https://romero.dev/tools/fez-viewer/</link>
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://halogenica.github.io/tools/fez-viewer/</guid>
+      <guid>https://romero.dev/tools/fez-viewer/</guid>
       <description>&lt;p&gt;Fez Viewer is a tool that can load the models and levels from Fez, and allow you to freely inspect and fly through them. It currently supports loading individual art objects, animation sets, and even entire levels.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CUDA Design Rule Checking</title>
-      <link>https://halogenica.github.io/tools/cuda-design-rule-checking/</link>
+      <link>https://romero.dev/tools/cuda-design-rule-checking/</link>
       <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://halogenica.github.io/tools/cuda-design-rule-checking/</guid>
+      <guid>https://romero.dev/tools/cuda-design-rule-checking/</guid>
       <description>&lt;p&gt;Design Rule Checking (DRC) of semiconductor layouts is a massively independently parallel problem, and well suited for CUDA. As part of an Independent Study, my friend Jeremy Espenshade and I implemented DRC algorithms using CUDA and achieved approximately 25-30x speedup of the checking algorithm on a Tesla card from 2009.&lt;/p&gt;</description>
     </item>
     
