@@ -3,265 +3,275 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://romero.dev/</loc>
-    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
+    <loc>https://halogenica.net/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/controller/</loc>
+    <loc>https://halogenica.net/hardware/custom-keyboard-dz65rgb/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.net/tags/hardware/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.net/hardware/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.net/tags/keyboard/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.net/tags/microcontroller/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.net/tags/</loc>
+    <lastmod>2019-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.net/hardware/custom-keyboard-tada68/</loc>
     <lastmod>2018-02-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/hardware/custom-keyboard-tada68/</loc>
-    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://romero.dev/tags/hardware/</loc>
-    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://romero.dev/hardware/</loc>
-    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://romero.dev/tags/microcontroller/</loc>
-    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://romero.dev/tags/</loc>
-    <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://romero.dev/tags/cinder/</loc>
+    <loc>https://halogenica.net/tags/cinder/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tools/fez-viewer/</loc>
+    <loc>https://halogenica.net/tools/fez-viewer/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/games/</loc>
+    <loc>https://halogenica.net/tags/games/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/graphics/</loc>
+    <loc>https://halogenica.net/tags/graphics/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/opengl/</loc>
+    <loc>https://halogenica.net/tags/opengl/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/tools/</loc>
+    <loc>https://halogenica.net/tags/tools/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tools/</loc>
+    <loc>https://halogenica.net/tools/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/games/cull-shot/</loc>
+    <loc>https://halogenica.net/games/cull-shot/</loc>
     <lastmod>2014-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/game-jam/</loc>
+    <loc>https://halogenica.net/tags/game-jam/</loc>
     <lastmod>2014-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/games/</loc>
+    <loc>https://halogenica.net/games/</loc>
     <lastmod>2014-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/directx/</loc>
+    <loc>https://halogenica.net/tags/directx/</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/</loc>
+    <loc>https://halogenica.net/graphics/</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/sharing-resources-between-directx-and-opengl/</loc>
+    <loc>https://halogenica.net/graphics/sharing-resources-between-directx-and-opengl/</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/hardware/monitor-overclock/</loc>
+    <loc>https://halogenica.net/hardware/monitor-overclock/</loc>
     <lastmod>2014-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/games/aggrogate/</loc>
+    <loc>https://halogenica.net/games/aggrogate/</loc>
     <lastmod>2013-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/games/zero-zen/</loc>
+    <loc>https://halogenica.net/games/zero-zen/</loc>
     <lastmod>2013-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/hardware/gameboy-backlight/</loc>
+    <loc>https://halogenica.net/hardware/gameboy-backlight/</loc>
     <lastmod>2013-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/music/</loc>
+    <loc>https://halogenica.net/tags/music/</loc>
     <lastmod>2013-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/hardware/midi-controller/</loc>
+    <loc>https://halogenica.net/tags/controller/</loc>
     <lastmod>2013-01-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/shaders/</loc>
+    <loc>https://halogenica.net/hardware/midi-controller/</loc>
+    <lastmod>2013-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://halogenica.net/tags/shaders/</loc>
     <lastmod>2012-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/signed-distance-fields/</loc>
+    <loc>https://halogenica.net/graphics/signed-distance-fields/</loc>
     <lastmod>2012-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/games/serendipity-with-cubes/</loc>
+    <loc>https://halogenica.net/games/serendipity-with-cubes/</loc>
     <lastmod>2012-04-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/game-engine/</loc>
+    <loc>https://halogenica.net/tags/game-engine/</loc>
     <lastmod>2012-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/physics/</loc>
+    <loc>https://halogenica.net/tags/physics/</loc>
     <lastmod>2012-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/software/ray-casting-and-picking-using-bullet-physics/</loc>
+    <loc>https://halogenica.net/software/ray-casting-and-picking-using-bullet-physics/</loc>
     <lastmod>2012-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/software/</loc>
+    <loc>https://halogenica.net/tags/software/</loc>
     <lastmod>2012-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/software/</loc>
+    <loc>https://halogenica.net/software/</loc>
     <lastmod>2012-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/lua/</loc>
+    <loc>https://halogenica.net/tags/lua/</loc>
     <lastmod>2011-07-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/software/scriptable-asset-loading/</loc>
+    <loc>https://halogenica.net/software/scriptable-asset-loading/</loc>
     <lastmod>2011-07-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/scripting/</loc>
+    <loc>https://halogenica.net/tags/scripting/</loc>
     <lastmod>2011-07-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/software/from-an-is-a-to-a-has-a-object-model/</loc>
+    <loc>https://halogenica.net/software/from-an-is-a-to-a-has-a-object-model/</loc>
     <lastmod>2011-04-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/particle-system/</loc>
+    <loc>https://halogenica.net/graphics/particle-system/</loc>
     <lastmod>2010-12-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/cuda/</loc>
+    <loc>https://halogenica.net/tags/cuda/</loc>
     <lastmod>2010-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tools/cuda-design-rule-checking/</loc>
+    <loc>https://halogenica.net/tools/cuda-design-rule-checking/</loc>
     <lastmod>2010-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/hardware/mini-server/</loc>
+    <loc>https://halogenica.net/hardware/mini-server/</loc>
     <lastmod>2010-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/hardware/remote-controlled-turret/</loc>
+    <loc>https://halogenica.net/hardware/remote-controlled-turret/</loc>
     <lastmod>2010-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/tags/ray-tracing/</loc>
+    <loc>https://halogenica.net/tags/ray-tracing/</loc>
     <lastmod>2009-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/volume-rendering-using-gpgpu/</loc>
+    <loc>https://halogenica.net/graphics/volume-rendering-using-gpgpu/</loc>
     <lastmod>2009-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/volume-rendering-on-the-psp/</loc>
+    <loc>https://halogenica.net/graphics/volume-rendering-on-the-psp/</loc>
     <lastmod>2009-02-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/hypertexturing/</loc>
+    <loc>https://halogenica.net/graphics/hypertexturing/</loc>
     <lastmod>2009-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/ray-tracer/</loc>
+    <loc>https://halogenica.net/graphics/ray-tracer/</loc>
     <lastmod>2008-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/graphics/first-graphics-project/</loc>
+    <loc>https://halogenica.net/graphics/first-graphics-project/</loc>
     <lastmod>2007-12-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://romero.dev/about/</loc>
+    <loc>https://halogenica.net/about/</loc>
   </url>
   
   <url>
-    <loc>https://romero.dev/categories/</loc>
+    <loc>https://halogenica.net/categories/</loc>
   </url>
   
   <url>
-    <loc>https://romero.dev/hobby/</loc>
+    <loc>https://halogenica.net/hobby/</loc>
   </url>
   
   <url>
-    <loc>https://romero.dev/post/</loc>
+    <loc>https://halogenica.net/post/</loc>
   </url>
   
 </urlset>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shaders on Halogenica</title>
-    <link>https://romero.dev/tags/shaders/</link>
+    <link>https://halogenica.net/tags/shaders/</link>
     <description>Recent content in Shaders on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
     <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
     <lastBuildDate>Fri, 16 Nov 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://romero.dev/tags/shaders/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://halogenica.net/tags/shaders/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Signed Distance Fields – Part 1</title>
-      <link>https://romero.dev/graphics/signed-distance-fields/</link>
+      <link>https://halogenica.net/graphics/signed-distance-fields/</link>
       <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://romero.dev/graphics/signed-distance-fields/</guid>
+      <guid>https://halogenica.net/graphics/signed-distance-fields/</guid>
       <description>&lt;p&gt;Signed Distance Fields, when used in computer graphics, is a way of mathematically defining a scene, which can be both greatly compressed, and scale to any resolution. There&amp;rsquo;s a truly excellent presentation by iq of rgba (Iñigo Quilez) posted on his website &lt;a href=&#34;http://www.iquilezles.org/www/material/nvscene2008/nvscene2008.htm&#34;&gt;http://www.iquilezles.org&lt;/a&gt; which he presented at nvscene back in 2008 called &amp;ldquo;Rendering Worlds with Two Triangles&amp;rdquo;. Other powerful examples were presented by smash of fairlight (Matt Swaboda) at GDC earlier this year &lt;a href=&#34;http://directtovideo.wordpress.com/2012/03/15/get-my-slides-from-gdc2012/&#34;&gt;http://directtovideo.wordpress.com&lt;/a&gt;. This is my first expermientation with this rendering technique.&lt;/p&gt;</description>
     </item>
     

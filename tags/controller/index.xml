@@ -2,31 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Controller on Halogenica</title>
-    <link>https://romero.dev/tags/controller/</link>
+    <link>https://halogenica.net/tags/controller/</link>
     <description>Recent content in Controller on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
     <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
-    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://romero.dev/tags/controller/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://halogenica.net/tags/controller/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Custom Keyboard - TADA68</title>
-      <link>https://romero.dev/hardware/custom-keyboard-tada68/</link>
-      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://romero.dev/hardware/custom-keyboard-tada68/</guid>
-      <description>&lt;p&gt;As I learned more about the world of mechanical keyboards, I wanted to experiment with new switches, play with new keycaps, and most importantly try my hand at building my own.&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>MIDI Controller</title>
-      <link>https://romero.dev/hardware/midi-controller/</link>
+      <link>https://halogenica.net/hardware/midi-controller/</link>
       <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
       <author>mike@halogenica.net (Michael Romero)</author>
-      <guid>https://romero.dev/hardware/midi-controller/</guid>
+      <guid>https://halogenica.net/hardware/midi-controller/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been interested in making some nice electronic music and sound effects for my games. I tend to find the UI of different VSTs frustrating, so I was interested in getting a MIDI controller that could help speed things up. I&amp;rsquo;m also interested in the possibilities of rigging the MIDI knobs to variables in the code so I could tweak different parameters in real time. Like any good (over-)engineer, I researched what it might take to put one together myself. For whatever reason I find this sort of controller hardware fascinating.&lt;/p&gt;</description>
     </item>
     
