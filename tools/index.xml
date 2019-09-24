@@ -5,8 +5,8 @@
     <link>https://halogenica.net/tools/</link>
     <description>Recent content in Tools on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
-    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <managingEditor>michael.robert.romero@gmail.com (Michael Romero)</managingEditor>
+    <webMaster>michael.robert.romero@gmail.com (Michael Romero)</webMaster>
     <lastBuildDate>Wed, 14 Jan 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://halogenica.net/tools/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Fez Viewer</title>
       <link>https://halogenica.net/tools/fez-viewer/</link>
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/tools/fez-viewer/</guid>
       <description>&lt;p&gt;Fez Viewer is a tool that can load the models and levels from Fez, and allow you to freely inspect and fly through them. It currently supports loading individual art objects, animation sets, and even entire levels.&lt;/p&gt;</description>
     </item>
@@ -25,7 +25,7 @@
       <title>CUDA Design Rule Checking</title>
       <link>https://halogenica.net/tools/cuda-design-rule-checking/</link>
       <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/tools/cuda-design-rule-checking/</guid>
       <description>&lt;p&gt;Design Rule Checking (DRC) of semiconductor layouts is a massively independently parallel problem, and well suited for CUDA. As part of an Independent Study, my friend Jeremy Espenshade and I implemented DRC algorithms using CUDA and achieved approximately 25-30x speedup of the checking algorithm on a Tesla card from 2009.&lt;/p&gt;</description>
     </item>

@@ -5,8 +5,8 @@
     <link>https://halogenica.net/tags/ray-tracing/</link>
     <description>Recent content in Ray Tracing on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
-    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <managingEditor>michael.robert.romero@gmail.com (Michael Romero)</managingEditor>
+    <webMaster>michael.robert.romero@gmail.com (Michael Romero)</webMaster>
     <lastBuildDate>Mon, 15 Jun 2009 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://halogenica.net/tags/ray-tracing/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Volume Rendering using GPGPU</title>
       <link>https://halogenica.net/graphics/volume-rendering-using-gpgpu/</link>
       <pubDate>Mon, 15 Jun 2009 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/graphics/volume-rendering-using-gpgpu/</guid>
       <description>&lt;p&gt;Traditional 3D computer graphics focus on rendering the exterior of objects. Volume rendering is a technique used to visualize information corresponding to the interior of an object, commonly used in medical imaging and other fields. Visualization of such data may be accomplished by ray casting; similar to ray tracing. Rendering each pixel can be done in parallel, so massively parallel architectures like GPGPU can dramatically speed up rendering.&lt;/p&gt;</description>
     </item>
@@ -25,7 +25,7 @@
       <title>Volume Rendering on the PSP</title>
       <link>https://halogenica.net/graphics/volume-rendering-on-the-psp/</link>
       <pubDate>Sun, 15 Feb 2009 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/graphics/volume-rendering-on-the-psp/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve long been active in PSP development and decided to have some fun with graphics on the PSP. I asked my university to order two PSP dev systems and I got to work porting my ray tracer to the PSP. As a team effort with three other graphics enthusiasts, we decided to accelerate hypertexturing on the PSP using the VFPU. We ended up with a ray tracer, hypertexturer, and volume ray caster working on the PSP capable of displaying a 64x64x64 voxel volume.&lt;/p&gt;</description>
     </item>
@@ -34,7 +34,7 @@
       <title>Hypertexturing</title>
       <link>https://halogenica.net/graphics/hypertexturing/</link>
       <pubDate>Mon, 19 Jan 2009 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/graphics/hypertexturing/</guid>
       <description>&lt;p&gt;This code is branched from the Ray Tracer code, with the perlin noise function added and the hit function and normal calculations for the volume of noise/density.&lt;/p&gt;</description>
     </item>
@@ -43,7 +43,7 @@
       <title>Ray Tracer</title>
       <link>https://halogenica.net/graphics/ray-tracer/</link>
       <pubDate>Mon, 15 Dec 2008 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/graphics/ray-tracer/</guid>
       <description>&lt;p&gt;This was my first ray tracer, implemented on the CPU using OpenGL and &lt;a href=&#34;http://www.opengl.org/resources/libraries/glut/&#34;&gt;GLUT&lt;/a&gt; to present to the screen, and coded in &lt;a href=&#34;http://www.bloodshed.net/devcpp.html&#34;&gt;Dev-C++&lt;/a&gt;. It is largely inspired by the ray tracer used in the book &lt;a href=&#34;http://www.raytracegroundup.com/&#34;&gt;Ray Tracing from the Ground Up&lt;/a&gt;, an excellent and highly recommended book on ray tracing by Kevin Suffern.&lt;/p&gt;</description>
     </item>

@@ -5,8 +5,8 @@
     <link>https://halogenica.net/tags/controller/</link>
     <description>Recent content in Controller on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
-    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <managingEditor>michael.robert.romero@gmail.com (Michael Romero)</managingEditor>
+    <webMaster>michael.robert.romero@gmail.com (Michael Romero)</webMaster>
     <lastBuildDate>Wed, 16 Jan 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://halogenica.net/tags/controller/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>MIDI Controller</title>
       <link>https://halogenica.net/hardware/midi-controller/</link>
       <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/hardware/midi-controller/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been interested in making some nice electronic music and sound effects for my games. I tend to find the UI of different VSTs frustrating, so I was interested in getting a MIDI controller that could help speed things up. I&amp;rsquo;m also interested in the possibilities of rigging the MIDI knobs to variables in the code so I could tweak different parameters in real time. Like any good (over-)engineer, I researched what it might take to put one together myself. For whatever reason I find this sort of controller hardware fascinating.&lt;/p&gt;</description>
     </item>

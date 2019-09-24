@@ -5,8 +5,8 @@
     <link>https://halogenica.net/tags/keyboard/</link>
     <description>Recent content in Keyboard on Halogenica</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>mike@halogenica.net (Michael Romero)</managingEditor>
-    <webMaster>mike@halogenica.net (Michael Romero)</webMaster>
+    <managingEditor>michael.robert.romero@gmail.com (Michael Romero)</managingEditor>
+    <webMaster>michael.robert.romero@gmail.com (Michael Romero)</webMaster>
     <lastBuildDate>Fri, 28 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://halogenica.net/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Custom Keyboard - DZ65RGB</title>
       <link>https://halogenica.net/hardware/custom-keyboard-dz65rgb/</link>
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/hardware/custom-keyboard-dz65rgb/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;https://halogenica.net/hardware/custom-keyboard-tada68/&#34;&gt;previous TADA68 build&lt;/a&gt; mysteriously bit the dust, so I decided to build a new keyboard and reuse my TADA68 aluminum case. Thankfully I found a fantastic (nearly) drop-in repalcement PCB: the &lt;a href=&#34;https://kbdfans.com/products/dz68rgb-customize-keyboard-diy-kit&#34;&gt;DZ65RGB&lt;/a&gt;. It is another 65% keyboard like the TADA68, and has my most desired improvements over the TADA68: individually addressible RGB LEDs, USB-C, hot-swappable switches, and a lovely purple and gold color scheme!&lt;/p&gt;</description>
     </item>
@@ -25,7 +25,7 @@
       <title>Custom Keyboard - TADA68</title>
       <link>https://halogenica.net/hardware/custom-keyboard-tada68/</link>
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
-      <author>mike@halogenica.net (Michael Romero)</author>
+      <author>michael.robert.romero@gmail.com (Michael Romero)</author>
       <guid>https://halogenica.net/hardware/custom-keyboard-tada68/</guid>
       <description>&lt;p&gt;As I learned more about the world of mechanical keyboards, I wanted to experiment with new switches, play with new keycaps, and most importantly try my hand at building my own.&lt;/p&gt;</description>
     </item>
