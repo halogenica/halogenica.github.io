@@ -59,7 +59,7 @@
   "headline": "Custom Keyboard - TADA68",
   "description" : "As I learned more about the world of mechanical keyboards, I wanted to experiment with new switches, play with new keycaps, and most importantly try my hand at building my own.\n",
   "inLanguage" : "en",
-  "wordCount":  1536 ,
+  "wordCount":  1522 ,
   "datePublished" : "2018-02-08T00:00:00",
   "dateModified" : "2018-02-08T00:00:00",
   "image" : "https:\/\/halogenica.net",
@@ -350,21 +350,36 @@
 </div>
 
 
-<p>In order to build a custom keyboard, you should have the following components
-* PCB
-  * This is the circuit board that contains all the logic for the keyboard
-* Plate
-  * This is commonly a metal plate that holds the switches in place, unless the keyboard is PCB-mount only
-* Stabilizers
-  * Also called &ldquo;stabs&rdquo;, these are the metal bars with plastic housings that stabilize large keys like the space bar, enter, backspace, and shift.
-* Switches
-* Keycaps
-* Case
-* Lube (optional)
-  * There are many kinds of lube for different applications:
-  * Between the metal bar and plastic housing of the stabs a good choice is <a href="https://smile.amazon.com/dp/B000AL8VD2/ref=cm_sw_em_r_mt_dp_U_AE9HDb1QGEADX">dielectric grease</a> because it&rsquo;s a thick heavy grease
-  * Between the plastic post and plastic housing of the stab a good choice is <a href="https://smile.amazon.com/dp/B002L5UL92/ref=cm_sw_em_r_mt_dp_U_QH9HDb2R74CS3">teflon grease</a> because it is a fine lubricant
-  * Within the switches themselves, a popular option is <a href="https://deskthority.net/wiki/Krytox">Krytox</a> to lube the moving parts and reduce reverberation from the spring within the switch</p>
+<p>In order to build a custom keyboard, you should have the following components:</p>
+
+<ul>
+<li>PCB
+
+<ul>
+<li>This is the circuit board that contains all the logic for the keyboard</li>
+</ul></li>
+<li>Plate
+
+<ul>
+<li>This is commonly a metal plate that holds the switches in place, unless the keyboard is PCB-mount only</li>
+</ul></li>
+<li>Stabilizers
+
+<ul>
+<li>Also called &ldquo;stabs&rdquo;, these are the metal bars with plastic housings that stabilize large keys like the space bar, enter, backspace, and shift.</li>
+</ul></li>
+<li>Switches</li>
+<li>Keycaps</li>
+<li>Case</li>
+<li>Lube (optional)
+
+<ul>
+<li>There are many kinds of lube for different applications:</li>
+<li>Between the metal bar and plastic housing of the stabs a good choice is <a href="https://smile.amazon.com/dp/B000AL8VD2/ref=cm_sw_em_r_mt_dp_U_AE9HDb1QGEADX">dielectric grease</a> because it&rsquo;s a thick heavy grease</li>
+<li>Between the plastic post and plastic housing of the stab a good choice is <a href="https://smile.amazon.com/dp/B002L5UL92/ref=cm_sw_em_r_mt_dp_U_QH9HDb2R74CS3">teflon grease</a> because it is a fine lubricant</li>
+<li>Within the switches themselves, a popular option is <a href="https://deskthority.net/wiki/Krytox">Krytox</a> to lube the moving parts and reduce reverberation from the spring within the switch</li>
+</ul></li>
+</ul>
 
 <h3 id="cut-the-tabs">Cut the tabs</h3>
 
@@ -449,7 +464,7 @@
 
 <h3 id="lube-and-mod-the-switches-optional">Lube and mod the switches (optional)</h3>
 
-<p>If you&rsquo;re going to mod the switches, you shoud do so before assembly; otherwise you may not be able to open the switches when they&rsquo;re mounted to the keyboard. This is fairly advanced and not at all requried. I performed a removable LED mod on my switches, but made the mistake of doing it after the switches were mounted (more on this later).</p>
+<p>If you&rsquo;re going to mod the switches, you should do so before assembly; otherwise you may not be able to open the switches when they&rsquo;re mounted to the keyboard. This is fairly advanced and not at all required. I performed a removable LED mod on my switches, but made the mistake of doing it after the switches were mounted (more on this later).</p>
 
 
 
@@ -484,7 +499,7 @@
 
 <h3 id="assembly">Assembly</h3>
 
-<p><strong>WARNING:</strong> DO NOT SOLDER until you&rsquo;ve verified that all pieces have been attached in the correct order and your stabilizers are in the correct place. Soldering should be nearly the final step. If the stabs are not in the right place before you solder the switches on, the board will be efectively ruined because it will be almost impossible to desolder and remove the switches.</p>
+<p><strong>WARNING:</strong> DO NOT SOLDER until you&rsquo;ve verified that all pieces have been attached in the correct order and your stabilizers are in the correct place. Soldering should be nearly the final step. If the stabs are not in the right place before you solder the switches on, the board will be effectively ruined because it will be almost impossible to desolder and remove the switches.</p>
 
 <ol>
 <li>Insert your stabs first (some mount on the plate and others mount on the PCB)</li>
@@ -613,7 +628,7 @@
 
 <h2 id="programming-the-keyboard-optional">Programming the keyboard (optional)</h2>
 
-<p>The TADA68 ships with a fully functioning keyboard firmware out of the box (as will nearly all PCBs). However if you would like to change the keyboard layout, or add other function layers, or simply replace key behavior, you can flash the fantastic open source <a href="https://qmk.fm/">QMK firmware</a>. This is very easy to do, but please carefuly read the <a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/tada68">Flashing Instructions</a> to avoid bricking your keyboard. The easiest method of configuring and compiling a new firmware is using the <a href="https://config.qmk.fm/#/tada68/LAYOUT_ansi">QMK Configurator</a>.</p>
+<p>The TADA68 ships with a fully functioning keyboard firmware out of the box (as will nearly all PCBs). However if you would like to change the keyboard layout, or add other function layers, or simply replace key behavior, you can flash the fantastic open source <a href="https://qmk.fm/">QMK firmware</a>. This is very easy to do, but please carefully read the <a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/tada68">Flashing Instructions</a> to avoid bricking your keyboard. The easiest method of configuring and compiling a new firmware is using the <a href="https://config.qmk.fm/#/tada68/LAYOUT_ansi">QMK Configurator</a>.</p>
 
 <h2 id="selecting-keycaps">Selecting keycaps</h2>
 
